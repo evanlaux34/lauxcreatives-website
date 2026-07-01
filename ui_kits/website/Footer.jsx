@@ -1,11 +1,12 @@
 /* global React */
 
 function Footer({ onNav }) {
+  const { isMobile } = window.useViewport();
   return (
     <footer style={{ background: 'var(--surface-footer)', color: 'rgba(242,234,212,0.85)' }}>
       <div style={{
-        maxWidth: '1180px', margin: '0 auto', padding: '54px 48px',
-        display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr', gap: '40px', alignItems: 'start',
+        maxWidth: '1180px', margin: '0 auto', padding: isMobile ? '44px 22px' : '54px 48px',
+        display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.4fr 1fr 1fr', gap: isMobile ? '30px' : '40px', alignItems: 'start',
       }}>
         <div>
         <div onClick={() => onNav('Home')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', marginBottom: '14px' }}>
@@ -30,8 +31,9 @@ function Footer({ onNav }) {
         </div>
       </div>
       <div style={{
-        borderTop: '1px solid rgba(242,234,212,0.16)', padding: '20px 48px',
-        display: 'flex', justifyContent: 'space-between',
+        borderTop: '1px solid rgba(242,234,212,0.16)', padding: isMobile ? '18px 22px' : '20px 48px',
+        display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '8px' : 0,
+        justifyContent: 'space-between', textAlign: isMobile ? 'center' : 'left',
         fontFamily: 'var(--font-label)', fontSize: '10px', letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(242,234,212,0.6)',
       }}>
         <span>Est. 2024 · Evan &amp; Alexis Laux</span>

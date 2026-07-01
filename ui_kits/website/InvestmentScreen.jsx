@@ -57,6 +57,7 @@ const PACKAGES = [
 function PackageCard({ pkg, onNav }) {
   const f = pkg.featured;
   const pAccent = f ? '#F2EAD4' : 'var(--lc-accent)';
+  const { isMobile } = window.useViewport();
   return (
     <div style={{
       display: 'flex', flexDirection: 'column',
@@ -72,7 +73,7 @@ function PackageCard({ pkg, onNav }) {
       }}>Collection</div>
       <div style={{
         fontFamily: 'var(--font-display)', fontSize: '24px', lineHeight: 1.05,
-        whiteSpace: 'nowrap', letterSpacing: '-0.01em', marginTop: '14px',
+        whiteSpace: isMobile ? 'normal' : 'nowrap', letterSpacing: '-0.01em', marginTop: '14px',
         color: f ? 'var(--lc-paper-text)' : 'var(--lc-ink)',
       }}>{pkg.name}</div>
       <div style={{
@@ -117,19 +118,21 @@ function PackageCard({ pkg, onNav }) {
 }
 
 function InvestmentScreen({ onNav }) {
+  const { isMobile, isTablet } = window.useViewport();
+  const cols = isMobile ? '1fr' : isTablet ? 'repeat(2,1fr)' : 'repeat(4,1fr)';
   return (
     <div style={{ background: 'var(--surface-page)' }}>
-      <section style={{ maxWidth: '1180px', margin: '0 auto', padding: '72px 48px 28px', textAlign: 'center' }}>
+      <section style={{ maxWidth: '1180px', margin: '0 auto', padding: isMobile ? '56px 22px 24px' : '72px 48px 28px', textAlign: 'center' }}>
         <Eyebrow tone="accent" style={{ marginBottom: '18px' }}>Investment</Eyebrow>
-        <div style={{ fontFamily: 'var(--font-display)', fontSize: '60px', lineHeight: 0.98, color: 'var(--lc-ink)' }}>Wedding Collections</div>
-        <p style={{ fontFamily: 'var(--font-editorial)', fontSize: '19px', lineHeight: 1.62, color: 'var(--lc-ink-soft)', margin: '20px auto 0', maxWidth: '600px', textWrap: 'pretty' }}>
+        <div style={{ fontFamily: 'var(--font-display)', fontSize: isMobile ? '38px' : isTablet ? '50px' : '60px', lineHeight: 0.98, color: 'var(--lc-ink)' }}>Wedding Collections</div>
+        <p style={{ fontFamily: 'var(--font-editorial)', fontSize: isMobile ? '17px' : '19px', lineHeight: 1.62, color: 'var(--lc-ink-soft)', margin: '20px auto 0', maxWidth: '600px', textWrap: 'pretty' }}>
           Every collection includes an engagement session and next-day teasers. Not sure which fits your day? <em style={{ fontStyle: 'italic', color: 'var(--lc-ink)' }}>Reach out — we'll help you find the right one.</em>
         </p>
         <Divider label="Weddings · Chicago & Beyond" style={{ maxWidth: '360px', margin: '30px auto 0' }} />
       </section>
 
-      <section style={{ maxWidth: '1180px', margin: '0 auto', padding: '24px 48px 84px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '18px', alignItems: 'stretch' }}>
+      <section style={{ maxWidth: '1180px', margin: '0 auto', padding: isMobile ? '24px 22px 56px' : '24px 48px 84px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: cols, gap: '18px', alignItems: 'stretch' }}>
           {PACKAGES.map((p) => <PackageCard key={p.name} pkg={p} onNav={onNav} />)}
         </div>
         <p style={{ fontFamily: 'var(--font-editorial)', fontStyle: 'italic', fontSize: '17px', color: 'var(--lc-ink-muted)', textAlign: 'center', margin: '40px auto 0', maxWidth: '620px', textWrap: 'pretty' }}>
