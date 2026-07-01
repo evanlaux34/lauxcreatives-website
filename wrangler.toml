@@ -1,0 +1,7 @@
+name = "lauxcreatives-website"
+compatibility_date = "2026-06-30"
+
+# This is a no-build static site: all HTML/CSS/JS live at the repo root.
+# Tell Cloudflare Pages to publish the root directory so `wrangler pages deploy`
+# doesn't fail trying to auto-detect a build output folder.
+pages_build_output_dir = "."
