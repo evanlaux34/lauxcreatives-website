@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  @font-face{
+    font-family:'Dreaming Serif';
+    src:url('uploads/DreamingSerif.otf') format('opentype'), url('uploads/DreamingSerif.ttf') format('truetype');
+    font-weight:normal;font-style:normal;font-display:swap;
+  }
+  body{background:#DED4B8}
+</style>
+</helmet>
+
+<div style="background:#DED4B8;min-height:100vh;padding:56px 32px;font-family:'EB Garamond',serif;color:#33301F">
+<div style="max-width:1180px;margin:0 auto;background:#EBE2C9;box-shadow:0 26px 64px rgba(46,42,32,0.26);overflow:hidden">
+
+  <!-- ============ COVER ============ -->
+  <section data-screen-label="Cover" style="position:relative;height:660px;background-image:linear-gradient(180deg,rgba(40,35,24,0.5) 0%,rgba(40,35,24,0.22) 38%,rgba(40,35,24,0.62) 100%),url('assets/photos/IMG_0092.jpg');background-size:cover;background-position:center 30%;color:#F2EAD4;overflow:hidden">
+    <div style="position:absolute;inset:0;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E&quot;);mix-blend-mode:overlay;opacity:{{ grainOpacity }};pointer-events:none"></div>
+    <div style="position:absolute;inset:22px;border:1px solid rgba(242,234,212,0.55);pointer-events:none"></div>
+    <div style="position:absolute;left:46px;right:46px;top:42px;display:flex;justify-content:space-between;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(242,234,212,0.92)">
+      <span>Georgia &amp; Beyond</span><span>Est. 2024</span>
+    </div>
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 40px">
+      
+      <div style="font-family: 'Dreaming Serif','EB Garamond',serif; font-size: 124px; line-height: 0.92; text-shadow: 0 2px 18px rgba(30,26,16,0.4); font-weight: 500">Laux Creatives</div><div style="margin-top:26px;font-family:'EB Garamond',serif;font-style:italic;font-size:24px;letter-spacing:0.02em;color:rgba(242,234,212,0.95);text-shadow:0 1px 10px rgba(30,26,16,0.5)">Serving people well through photography &amp; design</div>
+    </div>
+    <div style="position:absolute;left:0;right:0;bottom:44px;text-align:center;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:0.34em;text-transform:uppercase;color:rgba(242,234,212,0.85)">Photography · Design · Storytelling</div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section data-screen-label="About" style="padding:84px 64px;background:#EBE2C9;display:grid;grid-template-columns:0.85fr 1fr;gap:56px;align-items:center">
+    <div style="background:#F4EDDB;padding:14px 14px 0;box-shadow:0 14px 34px rgba(46,42,32,0.2);border:1px solid #DCD0B0">
+      <img src="assets/photos/IMG_7351-2.jpg" alt="" style="width:100%;display:block;filter:grayscale(1) contrast(1.05)">
+      <div style="font-family:'Courier Prime',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:#8A7E63;padding:12px 4px 16px">Fig. 01 — 35mm · the in-between moments</div>
+    </div>
+    <div>
+      <div style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.34em;text-transform:uppercase;color:{{ accent }};margin-bottom:22px">Our Story</div>
+      <div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:58px;line-height:1.0;color:#33301F">Storytellers<br>at heart.</div>
+      <p style="font-size:19px;line-height:1.62;color:#544D38;margin-top:28px;max-width:520px;text-wrap:pretty">Laux Creatives was founded by Evan &amp; Alexis Laux with one simple hope — to serve people well through photography and design. We're drawn to the moments, details, and ideas that make your story worth telling.</p>
+      <p style="font-size:19px;line-height:1.62;color:#544D38;margin-top:18px;max-width:520px;text-wrap:pretty">We're not here to check boxes. We're here to show up, earn your trust, and create something that <em style="font-style:italic;color:#33301F">actually feels like you.</em></p>
+      <div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:40px;color:{{ accent }};margin-top:26px">Evan &amp; Alexis</div>
+    </div>
+  </section>
+
+  <!-- ============ LOGO SUITE ============ -->
+  <section data-screen-label="Logo Suite" style="padding:24px 64px 84px;background:#EBE2C9">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:40px;border-top:1px solid #D6C9A6;padding-top:34px">
+      <div style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.32em;text-transform:uppercase;color:{{ accent }}">01 — The Mark</div>
+      <div style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#8A7E63">Logo Suite</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:18px">
+      <div style="grid-column:1 / 2;grid-row:1 / 3;background:#2E2A20;color:#F2EAD4;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px;min-height:360px;position:relative">
+        <div style="position:absolute;inset:18px;border:1px solid rgba(242,234,212,0.28);pointer-events:none"></div>
+        <div style="font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:0.34em;text-transform:uppercase;color:{{ accent }};margin-bottom:22px">Georgia &amp; Beyond</div>
+        <div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:74px;line-height:0.92;text-align:center">Laux Creatives</div>
+        <div style="margin-top:20px;font-family:'Courier Prime',monospace;font-size:10.5px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(242,234,212,0.7)">Photography &amp; Design · Est. 2024</div>
+        <div style="position:absolute;left:24px;top:20px;font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(242,234,212,0.5)">Primary</div>
+      </div>
+      <div style="background:#F4EDDB;border:1px solid #DCD0B0;display:flex;align-items:center;justify-content:center;padding:36px;min-height:171px;position:relative">
+        <div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:46px;color:#33301F">Laux Creatives</div>
+        <div style="position:absolute;left:18px;top:14px;font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:0.24em;text-transform:uppercase;color:#9A8E6F">Secondary</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+        <div style="background:#F4EDDB;border:1px solid #DCD0B0;display:flex;align-items:center;justify-content:center;padding:24px;min-height:171px;position:relative">
+          <div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:96px;line-height:0.8;color:#33301F">LC</div>
+          <div style="position:absolute;left:16px;top:14px;font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:0.24em;text-transform:uppercase;color:#9A8E6F">Monogram</div>
+        </div>
+        <div style="background:#6E7355;display:flex;align-items:center;justify-content:center;padding:24px;min-height:171px;position:relative">
+          <svg viewBox="0 0 150 150" style="width:130px;height:130px">
+            <defs><path id="vArc" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"></path></defs>
+            <circle cx="75" cy="75" r="71" fill="none" stroke="rgba(242,234,212,0.5)" stroke-width="1"></circle>
+            <circle cx="75" cy="75" r="63" fill="none" stroke="rgba(242,234,212,0.3)" stroke-width="0.75"></circle>
+            <text fill="#F2EAD4" font-family="'Courier Prime',monospace" font-size="8.5" letter-spacing="2.2"><textPath href="#vArc" startOffset="2%">LAUX CREATIVES · EST 2024 · GEORGIA ·</textPath></text>
+            <text x="75" y="88" text-anchor="middle" fill="#F2EAD4" font-family="'Dreaming Serif','EB Garamond',serif" font-size="46">LC</text>
+          </svg>
+          <div style="position:absolute;left:16px;top:14px;font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(242,234,212,0.65)">Stamp</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PALETTE ============ -->
+  <section data-screen-label="Palette" style="padding:84px 64px;background:#E3D9BD">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px">
+      <div style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.32em;text-transform:uppercase;color:{{ accent }}">02 — Palette</div>
+      <div style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#8A7E63">Pulled from film</div>
+    </div>
+    <p style="max-width:520px;font-size:17px;line-height:1.6;color:#544D38;margin-bottom:34px">Warm, faded, and lived-in — drawn straight from golden-hour skin tones, sage gowns, and aged brick.</p>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
+      <div><div style="height:160px;background:#2E2A20"></div><div style="padding-top:13px"><div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:21px;color:#33301F">Sepia Ink</div><div style="font-family:'Courier Prime',monospace;font-size:11px;color:#8A7E63;margin-top:3px">#2E2A20</div></div></div>
+      <div><div style="height:160px;background:#6E7355"></div><div style="padding-top:13px"><div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:21px;color:#33301F">Aged Olive</div><div style="font-family:'Courier Prime',monospace;font-size:11px;color:#8A7E63;margin-top:3px">#6E7355</div></div></div>
+      <div><div style="height:160px;background:#B98A45"></div><div style="padding-top:13px"><div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:21px;color:#33301F">Golden Honey</div><div style="font-family:'Courier Prime',monospace;font-size:11px;color:#8A7E63;margin-top:3px">#B98A45</div></div></div>
+      <div><div style="height:160px;background:#6E8398"></div><div style="padding-top:13px"><div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:21px;color:#33301F">Dusty Blue</div><div style="font-family:'Courier Prime',monospace;font-size:11px;color:#8A7E63;margin-top:3px">#6E8398</div></div></div>
+      <div><div style="height:160px;background:#EBE2C9;border:1px solid #D6C9A6"></div><div style="padding-top:13px"><div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:21px;color:#33301F">Ivory Paper</div><div style="font-family:'Courier Prime',monospace;font-size:11px;color:#8A7E63;margin-top:3px">#EBE2C9</div></div></div>
+    </div>
+  </section>
+
+  <!-- ============ TYPE ============ -->
+  <section data-screen-label="Typography" style="padding:84px 64px;background:#EBE2C9">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:42px">
+      <div style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.32em;text-transform:uppercase;color:{{ accent }}">03 — Typography</div>
+      <div style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#8A7E63">Three voices</div>
+    </div>
+    <div style="border-top:1px solid #D6C9A6;padding:34px 0;display:grid;grid-template-columns:210px 1fr;gap:40px;align-items:baseline">
+      <div><div style="font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:{{ accent }};margin-bottom:8px">Display</div><div style="font-size:16px;color:#544D38;line-height:1.5">Dreaming Serif<br>Wordmark &amp; headlines</div></div>
+      <div><div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:78px;line-height:0.98;color:#33301F">Worth Remembering</div><div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:24px;color:#8A7E63;margin-top:16px">ABCDEFGHIJKLM abcdefghijklm 1234567890</div></div>
+    </div>
+    <div style="border-top:1px solid #D6C9A6;padding:34px 0;display:grid;grid-template-columns:210px 1fr;gap:40px;align-items:baseline">
+      <div><div style="font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:{{ accent }};margin-bottom:8px">Editorial</div><div style="font-size:16px;color:#544D38;line-height:1.5">EB Garamond<br>Body &amp; quotes</div></div>
+      <div><div style="font-family:'EB Garamond',serif;font-style:italic;font-size:34px;line-height:1.3;color:#33301F">Drawn to the moments, details, and ideas that make your story worth telling.</div><div style="font-family:'EB Garamond',serif;font-size:17px;color:#8A7E63;margin-top:16px">ABCDEFGHIJKLM abcdefghijklm 1234567890</div></div>
+    </div>
+    <div style="border-top:1px solid #D6C9A6;border-bottom:1px solid #D6C9A6;padding:34px 0;display:grid;grid-template-columns:210px 1fr;gap:40px;align-items:baseline">
+      <div><div style="font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:0.26em;text-transform:uppercase;color:{{ accent }};margin-bottom:8px">Labels</div><div style="font-size:16px;color:#544D38;line-height:1.5">Courier Prime<br>Captions &amp; film edge</div></div>
+      <div><div style="font-family:'Courier Prime',monospace;font-size:14px;letter-spacing:0.28em;text-transform:uppercase;color:#33301F;margin-bottom:12px">Weddings · Engagements · Family · Portraits</div><div style="font-family:'Courier Prime',monospace;font-size:13px;letter-spacing:0.1em;color:#8A7E63">LAUX · 035 · ƒ1.8 · GEORGIA &amp; BEYOND · 2024</div></div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section data-screen-label="The Work" style="padding:84px 64px;background:#2E2A20;color:#F2EAD4;position:relative">
+    <div style="position:absolute;inset:0;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g2)'/%3E%3C/svg%3E&quot;);mix-blend-mode:overlay;opacity:{{ grainOpacity }};pointer-events:none"></div>
+    <div style="position:relative">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:40px">
+        <div style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.32em;text-transform:uppercase;color:{{ accent }}">04 — The Work</div>
+        <div style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(242,234,212,0.6)">Weddings · Engagements · Family · Portraits</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px">
+        <div style="grid-row:span 2;background:#F4EDDB;padding:12px 12px 0;box-shadow:0 14px 34px rgba(0,0,0,0.3)">
+          <img src="assets/photos/IMG_9828.jpg" alt="" style="width:100%;height:520px;object-fit:cover;display:block;filter:{{ photoFilter }}">
+          <div style="font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A7E63;padding:11px 4px 14px">Weddings — the whole party in motion</div>
+        </div>
+        <div style="background:#F4EDDB;padding:12px 12px 0;box-shadow:0 14px 34px rgba(0,0,0,0.3)">
+          <img src="assets/photos/IMG_0374.jpg" alt="" style="width:100%;height:230px;object-fit:cover;display:block;filter:{{ photoFilter }}">
+          <div style="font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A7E63;padding:11px 4px 14px">Engagements</div>
+        </div>
+        <div style="background:#F4EDDB;padding:12px 12px 0;box-shadow:0 14px 34px rgba(0,0,0,0.3)">
+          <img src="assets/photos/DSCF3673.jpg" alt="" style="width:100%;height:230px;object-fit:cover;display:block;filter:{{ photoFilter }}">
+          <div style="font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A7E63;padding:11px 4px 14px">Portraits</div>
+        </div>
+        <div style="background:#F4EDDB;padding:12px 12px 0;box-shadow:0 14px 34px rgba(0,0,0,0.3)">
+          <img src="assets/photos/IMG_6684.jpg" alt="" style="width:100%;height:230px;object-fit:cover;display:block;filter:{{ photoFilter }}">
+          <div style="font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A7E63;padding:11px 4px 14px">Engagements</div>
+        </div>
+        <div style="background:#F4EDDB;padding:12px 12px 0;box-shadow:0 14px 34px rgba(0,0,0,0.3)">
+          <img src="assets/photos/IMG_9244.jpg" alt="" style="width:100%;height:230px;object-fit:cover;display:block;filter:{{ photoFilter }}">
+          <div style="font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A7E63;padding:11px 4px 14px">Family</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px">
+        <div style="background:#F4EDDB;padding:12px 12px 0;box-shadow:0 14px 34px rgba(0,0,0,0.3)">
+          <img src="assets/photos/IMG_8504.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block;filter:{{ photoFilter }}">
+          <div style="font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A7E63;padding:11px 4px 14px">Weddings — the people who showed up</div>
+        </div>
+        <div style="background:#F4EDDB;padding:12px 12px 0;box-shadow:0 14px 34px rgba(0,0,0,0.3)">
+          <img src="assets/photos/IMG_0644.jpg" alt="" style="width:100%;height:300px;object-fit:cover;display:block;filter:{{ photoFilter }}">
+          <div style="font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8A7E63;padding:11px 4px 14px">Engagements — held still for a second</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPLICATIONS ============ -->
+  <section data-screen-label="Applications" style="padding:84px 64px;background:#E3D9BD">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:40px">
+      <div style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.32em;text-transform:uppercase;color:{{ accent }}">05 — In Use</div>
+      <div style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#8A7E63">Applications</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="aspect-ratio:1.75 / 1;background:#2E2A20;color:#F2EAD4;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative">
+          <div style="position:absolute;inset:14px;border:1px solid rgba(242,234,212,0.3)"></div>
+          <div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:40px">Laux Creatives</div>
+          <div style="font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:0.28em;text-transform:uppercase;color:{{ accent }};margin-top:10px">Photography &amp; Design</div>
+        </div>
+        <div style="aspect-ratio: 1.75 / 1; color: #F2EAD4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background-color: #6E7355">
+          <div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:58px;line-height:0.8">LC</div>
+          <div style="font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase">evan@lauxcreatives.com · www.lauxcreatives.com</div>
+        </div>
+      </div>
+      <div style="position:relative;aspect-ratio:1 / 1;overflow:hidden">
+        <img src="assets/photos/IMG_0374.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:{{ photoFilter }}">
+        <div style="position:absolute;inset:0;background:rgba(40,35,24,0.42)"></div>
+        <div style="position:absolute;inset:18px;border:1px solid rgba(242,234,212,0.5)"></div>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#F2EAD4">
+          <div style="font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.34em;text-transform:uppercase;color:{{ accent }};margin-bottom:14px">Georgia &amp; Beyond</div>
+          <div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:62px;line-height:0.95">Laux Creatives</div>
+          <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:20px;margin-top:12px">stories worth telling</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:22px;position:relative;height:170px;overflow:hidden">
+      <img src="assets/photos/IMG_9828.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:{{ photoFilter }}">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(40,35,24,0.5),rgba(40,35,24,0.05))"></div>
+      <div style="position:absolute;left:28px;bottom:22px;font-family:'Dreaming Serif','EB Garamond',serif;font-size:26px;color:#F2EAD4;text-shadow:0 1px 8px rgba(0,0,0,0.5)">Laux Creatives</div>
+      <div style="position:absolute;right:28px;top:22px;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(242,234,212,0.85)">Watermark</div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#211E16;color:rgba(242,234,212,0.85);padding:42px 64px;display:flex;align-items:center;justify-content:space-between">
+    <div style="font-family:'Dreaming Serif','EB Garamond',serif;font-size:26px;color:#F2EAD4">Laux Creatives</div>
+    <div style="font-family:'Courier Prime',monospace;font-size:10.5px;letter-spacing:0.26em;text-transform:uppercase">Brand Identity · Vintage · Evan &amp; Alexis Laux</div>
+  </footer>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:900},&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#C8964A&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showGrain&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;photoTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Warm Film&quot;,&quot;Sepia&quot;,&quot;Black &amp; White&quot;],&quot;default&quot;:&quot;Warm Film&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accentColor ?? '#C8964A';
+    const grainOpacity = (this.props.showGrain ?? true) ? 0.2 : 0;
+    const tone = this.props.photoTone ?? 'Warm Film';
+    const filters = {
+      'Warm Film': 'sepia(0.12) saturate(0.95) contrast(1.02) brightness(1.02)',
+      'Sepia': 'sepia(0.55) saturate(0.85) contrast(1.03)',
+      'Black & White': 'grayscale(1) contrast(1.06)',
+    };
+    const photoFilter = filters[tone] || filters['Warm Film'];
+    return { accent, grainOpacity, photoFilter };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Ink & Status" subtitle="Warm-brown text inks + muted status hues" -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin:0; background:var(--surface-page); font-family:var(--font-label); }
+  .wrap { padding:20px; display:grid; grid-template-columns:1.3fr 1fr; gap:26px; }
+  .stack { display:flex; flex-direction:column; gap:9px; }
+  .ink { display:flex; align-items:center; gap:12px; }
+  .dot { width:26px; height:26px; flex:none; border:1px solid var(--border-card); }
+  .lbl { font-family:var(--font-display); font-size:18px; color:var(--text-heading); }
+  .hex { font-family:var(--font-label); font-size:10.5px; color:var(--text-meta); margin-left:auto; }
+  .status-row { display:flex; gap:10px; }
+  .st { flex:1; height:54px; display:flex; align-items:flex-end; padding:6px; color:var(--text-on-dark); font-size:9.5px; letter-spacing:0.12em; text-transform:uppercase; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="stack">
+      <div class="ink"><span class="dot" style="background:var(--lc-ink)"></span><span class="lbl">Ink</span><span class="hex">#33301F</span></div>
+      <div class="ink"><span class="dot" style="background:var(--lc-ink-soft)"></span><span class="lbl">Ink Soft</span><span class="hex">#544D38</span></div>
+      <div class="ink"><span class="dot" style="background:var(--lc-ink-muted)"></span><span class="lbl">Ink Muted</span><span class="hex">#8A7E63</span></div>
+      <div class="ink"><span class="dot" style="background:var(--lc-paper-text);border-color:var(--lc-ink-muted)"></span><span class="lbl">Paper Text</span><span class="hex">#F2EAD4</span></div>
+    </div>
+    <div class="status-row">
+      <div class="st" style="background:var(--status-positive)">Positive</div>
+      <div class="st" style="background:var(--status-info)">Info</div>
+      <div class="st" style="background:var(--status-warning)">Warning</div>
+      <div class="st" style="background:var(--status-danger)">Danger</div>
+    </div>
+  </div>
+</body>
+</html>

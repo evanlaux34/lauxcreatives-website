@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Core Palette" subtitle="Pulled from film — sepia, sage, honey, dusty blue" -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin:0; background:var(--surface-page); font-family:var(--font-label); }
+  .row { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; padding:20px; }
+  .sw { display:flex; flex-direction:column; }
+  .chip { height:84px; }
+  .name { font-family:var(--font-display); font-size:21px; color:var(--text-heading); margin-top:11px; }
+  .hex { font-family:var(--font-label); font-size:11px; color:var(--text-meta); margin-top:3px; letter-spacing:0.04em; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--lc-sepia-ink)"></div><div class="name">Sepia Ink</div><div class="hex">#2E2A20</div></div>
+    <div class="sw"><div class="chip" style="background:var(--lc-aged-olive)"></div><div class="name">Aged Olive</div><div class="hex">#6E7355</div></div>
+    <div class="sw"><div class="chip" style="background:var(--lc-golden-honey)"></div><div class="name">Golden Honey</div><div class="hex">#B98A45</div></div>
+    <div class="sw"><div class="chip" style="background:var(--lc-dusty-blue)"></div><div class="name">Dusty Blue</div><div class="hex">#6E8398</div></div>
+  </div>
+</body>
+</html>

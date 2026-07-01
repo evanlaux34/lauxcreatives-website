@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#2E2A20">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#2E2A20"/>
+    <circle cx="600" cy="400" r="230" fill="none" stroke="#EBE2C9" stroke-width="10"/>
+    <text x="600" y="408" fill="#EBE2C9" font-family="Georgia,'Times New Roman',serif" font-size="240" font-weight="700" text-anchor="middle" dominant-baseline="middle">lc</text>
+  </svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" href="assets/logos/badge-gold-plain.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  @font-face{
+    font-family:'Bringbold';
+    src:url('assets/fonts/Bringbold-Regular.otf') format('opentype'),
+        url('assets/fonts/Bringbold-Regular.ttf') format('truetype');
+    font-weight:normal; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:'Bringbold';
+    src:url('assets/fonts/Bringbold-Oblique.otf') format('opentype'),
+        url('assets/fonts/Bringbold-Oblique.ttf') format('truetype');
+    font-weight:normal; font-style:italic; font-display:swap;
+  }
+  html,body{margin:0;}
+  body{background:#EBE2C9; color:#33301F; font-family:'EB Garamond',Georgia,serif;}
+  a{text-decoration:none;}
+  ::selection{background:rgba(200,150,74,0.28);}
+  input,textarea{outline:none;}
+  input::placeholder,textarea::placeholder{color:#9A8E6F;}
+</style>
+</helmet>
+
+<div style="{{ rootStyle }}">
+
+  <!-- ============ NAV ============ -->
+  <header style="position:sticky; top:0; z-index:30; display:flex; align-items:center; justify-content:space-between; padding:18px 46px; background:rgba(235,226,201,0.92); backdrop-filter:saturate(1.1); border-bottom:1px solid #D6C9A6;">
+    <div onClick="{{ goHome }}" style="cursor:pointer; display:flex; align-items:center;">
+      <img src="assets/logos/lockup-ink.png" alt="Laux Creatives" style="height: 34px; width: auto; display: block">
+    </div>
+    <nav style="display:flex; align-items:center; gap:32px;">
+      <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="4">
+        <a onClick="{{ item.onClick }}" style="{{ item.style }}">{{ item.label }}</a>
+      </sc-for>
+      <button onClick="{{ goContact }}" style="font-family:'Courier Prime',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#F2EAD4; background:#2E2A20; border:none; padding:11px 20px; cursor:pointer;" style-hover="background:#433d2c;">Inquire</button>
+    </nav>
+  </header>
+
+  <!-- ============ HOME ============ -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <!-- Hero -->
+    <section style="position:relative; height:648px; overflow:hidden; color:#F2EAD4; background-image:linear-gradient(180deg,rgba(40,35,24,0.5) 0%,rgba(40,35,24,0.18) 42%,rgba(40,35,24,0.68) 100%),url(assets/photos/IMG_9828-hero.jpg); background-size:cover; background-position:center 42%;">
+      <div style="position:absolute; inset:0; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;); opacity:0.18; mix-blend-mode:overlay; pointer-events:none;"></div>
+      <div style="position:absolute; inset:22px; border:1px solid rgba(242,234,212,0.55); pointer-events:none;"></div>
+      <div style="position:absolute; left:46px; right:46px; top:34px; display:flex; justify-content:space-between; font-family:'Courier Prime',monospace; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:rgba(242,234,212,0.92);">
+        <span>Chicago &amp; Beyond</span><span>Est. 2024</span>
+      </div>
+      <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0 40px;">
+        <img src="assets/logos/mark-circle-paper.png" alt="Laux Creatives" style="height: 84px; width: auto; margin-bottom: 20px; filter: drop-shadow(0 2px 14px rgba(30,26,16,0.45)); transform: translate(0px, -130px); box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15)">
+        
+        <img src="assets/logos/wordmark-paper.png" alt="Laux Creatives" style="width: 450px; height: auto; display: block; filter: drop-shadow(0 2px 20px rgba(30,26,16,0.42)); transform: translate(0px, 29px)"><div style="margin-top: 20px; font-family: 'EB Garamond',serif; font-style: italic; font-size: 23px; color: rgba(242,234,212,0.95); text-shadow: 0 1px 10px rgba(30,26,16,0.5); transform: translate(0px, 20px)">Serving people well through photography &amp; design</div>
+        <div style="margin-top:34px; display:flex; gap:14px;">
+          <button onClick="{{ goPortfolio }}" style="font-family:'Courier Prime',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#F2EAD4; background:transparent; border:1px solid rgba(242,234,212,0.55); padding:13px 26px; cursor:pointer;" style-hover="background:rgba(242,234,212,0.12);">View the Work</button>
+          <button onClick="{{ goContact }}" style="font-family:'Courier Prime',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#F2EAD4; background:transparent; border:1px solid rgba(242,234,212,0.55); padding:13px 26px; cursor:pointer;" style-hover="background:rgba(242,234,212,0.12);">Inquire</button>
+        </div>
+      </div>
+      <div style="position:absolute; left:0; right:0; bottom:38px; text-align:center; font-family:'Courier Prime',monospace; font-size:11px; letter-spacing:0.34em; text-transform:uppercase; color:rgba(242,234,212,0.85);">Photography · Design · Storytelling</div>
+    </section>
+
+    <!-- Intro -->
+    <section style="background:#EBE2C9; padding:84px 48px;">
+      <div style="max-width:760px; margin:0 auto; text-align:center;">
+        <div style="font-family:'Courier Prime',monospace; font-size:12px; letter-spacing:0.32em; text-transform:uppercase; color:var(--accent,#C8964A); margin-bottom:20px;">Our Hope</div>
+        <div style="font-family:'Bringbold',serif; font-size:46px; line-height:1.06; letter-spacing:var(--mh-ls,-0.01em); text-transform:var(--mh-tf,none); color:#33301F; text-wrap:balance;">We're drawn to the moments that make your story worth telling.</div>
+        <p style="font-family:'EB Garamond',serif; font-size:19px; line-height:1.62; color:#544D38; margin-top:24px; text-wrap:pretty;">We're not here to check boxes. We're here to show up, earn your trust, and create something that <em style="font-style:italic; color:#33301F;">actually feels like you.</em></p>
+      </div>
+    </section>
+
+    <!-- Featured work -->
+    <section style="background:#E3D9BD; padding:84px 48px;">
+      <div style="max-width:1180px; margin:0 auto;">
+        <div style="display:flex; align-items:baseline; justify-content:space-between; border-bottom:1px solid #D6C9A6; padding-bottom:16px; margin-bottom:36px;">
+          <div style="font-family:'Courier Prime',monospace; font-size:12px; letter-spacing:0.3em; text-transform:uppercase; color:var(--accent,#C8964A);">01 — Featured Work</div>
+          <div style="font-family:'Courier Prime',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#8A7E63;">Weddings · Engagements · Family</div>
+        </div>
+        <div style="display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:18px;">
+          <div style="grid-row:span 2; background:#F4EDDB; padding:12px 12px 0; border:1px solid #DCD0B0; box-shadow:0 14px 34px rgba(46,42,32,0.20);">
+            <div style="overflow:hidden; height:520px;"><img src="assets/photos/IMG_9828.jpg" style="width:100%; height:100%; object-fit:cover; display:block; filter:var(--photo-filter,sepia(.12) saturate(.95) contrast(1.02) brightness(1.02));"></div>
+            <div style="font-family:'Courier Prime',monospace; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#8A7E63; padding:10px 2px 12px;">Fig. 01 — the whole party in motion</div>
+          </div>
+          <div style="background:#F4EDDB; padding:12px 12px 0; border:1px solid #DCD0B0; box-shadow:0 14px 34px rgba(46,42,32,0.20);">
+            <div style="overflow:hidden; height:251px;"><img src="assets/photos/IMG_0374.jpg" style="width:100%; height:100%; object-fit:cover; display:block; filter:var(--photo-filter,sepia(.12) saturate(.95) contrast(1.02) brightness(1.02));"></div>
+            <div style="font-family:'Courier Prime',monospace; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#8A7E63; padding:10px 2px 12px;">Engagements</div>
+          </div>
+          <div style="background:#F4EDDB; padding:12px 12px 0; border:1px solid #DCD0B0; box-shadow:0 14px 34px rgba(46,42,32,0.20);">
+            <div style="overflow:hidden; height:251px;"><img src="assets/photos/DSCF3673.jpg" style="width:100%; height:100%; object-fit:cover; display:block; filter:var(--photo-filter,sepia(.12) saturate(.95) contrast(1.02) brightness(1.02));"></div>
+            <div style="font-family:'Courier Prime',monospace; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#8A7E63; padding:10px 2px 12px;">Portraits</div>
+          </div>
+          <div style="background:#F4EDDB; padding:12px 12px 0; border:1px solid #DCD0B0; box-shadow:0 14px 34px rgba(46,42,32,0.20);">
+            <div style="overflow:hidden; height:251px;"><img src="assets/photos/IMG_6684.jpg" style="width:100%; height:100%; object-fit:cover; display:block; filter:var(--photo-filter,sepia(.12) saturate(.95) contrast(1.02) brightness(1.02));"></div>
+            <div style="font-family:'Courier Prime',monospace; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#8A7E63; padding:10px 2px 12px;">Engagements</div>
+          </div>
+          <div style="background:#F4EDDB; padding:12px 12px 0; border:1px solid #DCD0B0; box-shadow:0 14px 34px rgba(46,42,32,0.20);">
+            <div style="overflow:hidden; height:251px;"><img src="assets/photos/IMG_9244.jpg" style="width:100%; height:100%; object-fit:cover; display:block; filter:var(--photo-filter,sepia(.12) saturate(.95) contrast(1.02) brightness(1.02));"></div>
+            <div style="font-family:'Courier Prime',monospace; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#8A7E63; padding:10px 2px 12px;">Family</div>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:40px;">
+          <button onClick="{{ goPortfolio }}" style="font-family:'Courier Prime',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#33301F; background:transparent; border:1px solid #8A7E63; padding:13px 26px; cursor:pointer;" style-hover="border-color:#33301F;">See the full gallery</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About teaser -->
+    <section style="background:#EBE2C9; padding:84px 48px;">
+      <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:0.85fr 1fr; gap:56px; align-items:center;">
+        <div style="background:#F4EDDB; padding:12px 12px 0; border:1px solid #DCD0B0; box-shadow:0 14px 34px rgba(46,42,32,0.20);">
+          <div style="overflow:hidden; height:420px;"><img src="assets/photos/IMG_7351-2.jpg" style="width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1) contrast(1.04) brightness(1.02);"></div>
+          <div style="font-family:'Courier Prime',monospace; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#8A7E63; padding:10px 2px 12px;">Fig. 01 — 35mm · the in-between moments</div>
+        </div>
+        <div>
+          <div style="font-family:'Courier Prime',monospace; font-size:12px; letter-spacing:0.32em; text-transform:uppercase; color:var(--accent,#C8964A); margin-bottom:20px;">Our Story</div>
+          <div style="font-family:'Bringbold',serif; font-size:52px; line-height:1.0; letter-spacing:var(--mh-ls,-0.01em); text-transform:var(--mh-tf,none); color:#33301F;">Storytellers<br>at heart.</div>
+          <p style="font-family:'EB Garamond',serif; font-size:19px; line-height:1.62; color:#544D38; margin-top:24px; max-width:480px; text-wrap:pretty;">Laux Creatives was founded by Evan &amp; Alexis Laux with one simple hope — to serve people well through photography and design.</p>
+          <div style="font-family:'Bringbold',serif; font-style:italic; font-size:38px; color:var(--accent,#C8964A); margin-top:20px;">Evan &amp; Alexis</div>
+          <div style="margin-top:22px;"><button onClick="{{ goAbout }}" style="font-family:'Courier Prime',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent,#C8964A); background:transparent; border:none; padding:0; cursor:pointer;">More about us →</button></div>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ PORTFOLIO ============ -->
+  <sc-if value="{{ isPortfolio }}" hint-placeholder-val="{{ false }}">
+  <div style="background:#EBE2C9;">
+    <section style="max-width:1180px; margin:0 auto; padding:72px 48px 40px;">
+      <div style="font-family:'Courier Prime',monospace; font-size:12px; letter-spacing:0.32em; text-transform:uppercase; color:var(--accent,#C8964A); margin-bottom:18px;">The Work</div>
+      <div style="font-family:'Bringbold',serif; font-size:66px; line-height:0.98; letter-spacing:var(--mh-ls,-0.02em); text-transform:var(--mh-tf,none); color:#33301F;">Worth Remembering</div>
+      <p style="font-family:'EB Garamond',serif; font-size:19px; line-height:1.62; color:#544D38; margin-top:20px; max-width:560px;">A few of the days, fields, and faces we've been trusted with. Warm, candid, unhurried — the in-between moments most worth keeping.</p>
+      <div style="display:flex; gap:12px; margin-top:32px; flex-wrap:wrap;">
+        <sc-for list="{{ cats }}" as="c" hint-placeholder-count="5">
+          <span onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</span>
+        </sc-for>
+      </div>
+    </section>
+    <section style="max-width:1180px; margin:0 auto; padding:0 48px 84px;">
+      <div style="column-count:3; column-gap:18px;">
+        <sc-for list="{{ portfolioShown }}" as="p">
+          <div style="break-inside:avoid; margin-bottom:18px; background:#F4EDDB; padding:12px 12px 0; border:1px solid #DCD0B0; box-shadow:0 14px 34px rgba(46,42,32,0.20);">
+            <div style="overflow:hidden;"><img src="{{ p.src }}" style="{{ p.imgStyle }}"></div>
+            <div style="font-family:'Courier Prime',monospace; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#8A7E63; padding:10px 2px 12px;">{{ p.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ ABOUT ============ -->
+  <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+  <div style="background:#EBE2C9;">
+    <section style="max-width:1180px; margin:0 auto; padding:84px 48px; display:grid; grid-template-columns:1fr 0.85fr; gap:56px; align-items:center;">
+      <div>
+        <div style="font-family:'Courier Prime',monospace; font-size:12px; letter-spacing:0.32em; text-transform:uppercase; color:var(--accent,#C8964A); margin-bottom:20px;">Our Story</div>
+        <div style="font-family:'Bringbold',serif; font-size:58px; line-height:1.0; letter-spacing:var(--mh-ls,-0.02em); text-transform:var(--mh-tf,none); color:#33301F;">Storytellers at heart.</div>
+        <p style="font-family:'EB Garamond',serif; font-size:19px; line-height:1.62; color:#544D38; margin-top:26px; max-width:520px; text-wrap:pretty;">Laux Creatives was founded by Evan &amp; Alexis Laux with one simple hope — to serve people well through photography and design. We're drawn to the moments, details, and ideas that make your story worth telling.</p>
+        <p style="font-family:'EB Garamond',serif; font-size:19px; line-height:1.62; color:#544D38; margin-top:18px; max-width:520px; text-wrap:pretty;">We're not here to check boxes. We're here to show up, earn your trust, and create something that <em style="font-style:italic; color:#33301F;">actually feels like you.</em></p>
+        <div style="font-family:'Bringbold',serif; font-style:italic; font-size:40px; color:var(--accent,#C8964A); margin-top:24px;">Evan &amp; Alexis</div>
+      </div>
+      <div style="background:#F4EDDB; padding:12px 12px 0; border:1px solid #DCD0B0; box-shadow:0 14px 34px rgba(46,42,32,0.20);">
+        <div style="overflow:hidden; height:520px;"><img src="assets/photos/IMG_7351-2.jpg" style="width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1) contrast(1.04) brightness(1.02);"></div>
+        <div style="font-family:'Courier Prime',monospace; font-size:10.5px; letter-spacing:0.16em; text-transform:uppercase; color:#8A7E63; padding:10px 2px 12px;">Fig. 01 — 35mm · the in-between moments</div>
+      </div>
+    </section>
+
+    <section style="background:#2E2A20; color:#F2EAD4; position:relative; padding:88px 48px;">
+      <div style="position:absolute; inset:0; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;); opacity:0.2; mix-blend-mode:overlay; pointer-events:none;"></div>
+      <div style="position:relative; max-width:900px; margin:0 auto; text-align:center;">
+        <img src="assets/logos/mono-paper.png" alt="Laux Creatives" style="height:78px; width:auto; opacity:0.95;">
+        <div style="font-family: 'EB Garamond',serif; font-style: italic; font-size: 30px; line-height: 1.3; margin-top: 26px">"Drawn to the moments, details, and ideas that make your story worth telling."</div>
+        <div style="display:flex; align-items:center; justify-content:center; gap:16px; margin-top:38px; max-width:440px; margin-left:auto; margin-right:auto;">
+          <div style="flex:1; height:1px; background:rgba(242,234,212,0.28);"></div>
+          <div style="font-family:'Courier Prime',monospace; font-size:10.5px; letter-spacing:0.28em; text-transform:uppercase; color:rgba(242,234,212,0.75);">Georgia · Est. 2024</div>
+          <div style="flex:1; height:1px; background:rgba(242,234,212,0.28);"></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1180px; margin:0 auto; padding:84px 48px;">
+      <div style="font-family:'Courier Prime',monospace; font-size:12px; letter-spacing:0.32em; text-transform:uppercase; color:var(--accent,#C8964A); margin-bottom:34px;">What We Offer</div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+          <div style="border-top:1px solid #D6C9A6; padding-top:18px;">
+            <div style="font-family:'Bringbold',serif; font-size:27px; color:#33301F;">{{ s.title }}</div>
+            <p style="font-family:'EB Garamond',serif; font-size:16px; line-height:1.55; color:#544D38; margin-top:8px;">{{ s.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ INVESTMENT ============ -->
+  <sc-if value="{{ isInvestment }}" hint-placeholder-val="{{ false }}">
+  <div style="background:#EBE2C9;">
+    <section style="max-width:1180px; margin:0 auto; padding:72px 48px 28px; text-align:center;">
+      <div style="font-family:'Courier Prime',monospace; font-size:12px; letter-spacing:0.32em; text-transform:uppercase; color:var(--accent,#C8964A); margin-bottom:18px;">Investment</div>
+      <div style="font-family:'Bringbold',serif; font-size:60px; line-height:0.98; letter-spacing:var(--mh-ls,-0.02em); text-transform:var(--mh-tf,none); color:#33301F;">Wedding Collections</div>
+      <p style="font-family:'EB Garamond',serif; font-size:19px; line-height:1.62; color:#544D38; margin:20px auto 0; max-width:600px; text-wrap:pretty;">Every collection includes an engagement session and next-day teasers. Not sure which fits your day? <em style="font-style:italic; color:#33301F;">Reach out — we'll help you find the right one.</em></p>
+      <div style="display:flex; align-items:center; justify-content:center; gap:14px; max-width:360px; margin:30px auto 0;">
+        <div style="flex:1; height:1px; background:#D6C9A6;"></div>
+        <div style="font-family:'Courier Prime',monospace; font-size:10.5px; letter-spacing:0.28em; text-transform:uppercase; color:#8A7E63;">Weddings · Chicago &amp; Beyond</div>
+        <div style="flex:1; height:1px; background:#D6C9A6;"></div>
+      </div>
+    </section>
+    <section style="max-width:1180px; margin:0 auto; padding:24px 48px 84px;">
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px; align-items:stretch;">
+        <sc-for list="{{ packages }}" as="p" hint-placeholder-count="4">
+          <div style="{{ p.cardStyle }}">
+            <div style="{{ p.eyebrowStyle }}">Collection</div>
+            <div style="{{ p.nameStyle }}">{{ p.name }}</div>
+            <div style="{{ p.coverageStyle }}">{{ p.coverage }} coverage</div>
+            <div style="{{ p.ruleStyle }}"></div>
+            <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; flex:1;">
+              <sc-for list="{{ p.items }}" as="it" hint-placeholder-count="4">
+                <li style="{{ it.style }}"><span style="position:absolute; left:0; top:0; color:var(--accent,#C8964A);">·</span>{{ it.text }}</li>
+              </sc-for>
+            </ul>
+            <div style="{{ p.ruleStyle }}"></div>
+            <div style="{{ p.priceLabelStyle }}">Starting at</div>
+            <div style="{{ p.priceStyle }}">{{ p.price }}</div>
+            <div onClick="{{ p.onClick }}" style="{{ p.btnStyle }}">Inquire</div>
+          </div>
+        </sc-for>
+      </div>
+      <p style="font-family:'EB Garamond',serif; font-style:italic; font-size:17px; color:#8A7E63; text-align:center; margin:40px auto 0; max-width:620px; text-wrap:pretty;">Custom collections, elopements, and travel are always welcome — tell us about your day and we'll tailor something to fit.</p>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ CONTACT ============ -->
+  <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+  <div style="background:#EBE2C9;">
+    <section style="max-width:1180px; margin:0 auto; padding:84px 48px; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
+      <div>
+        <div style="font-family:'Courier Prime',monospace; font-size:12px; letter-spacing:0.32em; text-transform:uppercase; color:var(--accent,#C8964A); margin-bottom:20px;">Say Hello</div>
+        <div style="font-family:'Bringbold',serif; font-size:54px; line-height:1.0; letter-spacing:var(--mh-ls,-0.02em); text-transform:var(--mh-tf,none); color:#33301F;">Let's tell your story.</div>
+        <p style="font-family:'EB Garamond',serif; font-size:19px; line-height:1.62; color:#544D38; margin-top:22px; max-width:440px; text-wrap:pretty;">Tell us a little about your day. We read every note ourselves and reply within a few days — no forms-into-the-void here.</p>
+        <div style="margin-top:34px; font-family:'Courier Prime',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#8A7E63; line-height:2.2;">evan@lauxcreatives.com<br>www.lauxcreatives.com<br>Chicago &amp; Beyond</div>
+        <img src="assets/logos/badge-gold.png" alt="Laux Creatives — Chicago &amp; Beyond" style="height:96px; width:auto; margin-top:30px; opacity:0.95;">
+      </div>
+
+      <div style="background:#F4EDDB; border:1px solid #DCD0B0; box-shadow:0 14px 34px rgba(46,42,32,0.20); padding:40px;">
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align:center; padding:40px 12px;">
+            <div style="font-family:'Bringbold',serif; font-size:40px; color:#33301F;">Thank you.</div>
+            <p style="font-family:'EB Garamond',serif; font-style:italic; font-size:19px; color:#544D38; margin-top:12px;">We'll be in touch soon — we can't wait to hear more.</p>
+            <div style="margin-top:24px;"><button onClick="{{ reset }}" style="font-family:'Courier Prime',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent,#C8964A); background:transparent; border:none; cursor:pointer;">Send another →</button></div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submit }}" style="display:flex; flex-direction:column; gap:24px;">
+            <label style="display:block;">
+              <span style="font-family:'Courier Prime',monospace; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#8A7E63;">Your names</span>
+              <input type="text" placeholder="Evan &amp; Alexis" style="width:100%; box-sizing:border-box; margin-top:8px; padding:8px 2px; background:transparent; border:none; border-bottom:1px solid #D6C9A6; font-family:'EB Garamond',serif; font-size:18px; color:#33301F;">
+            </label>
+            <label style="display:block;">
+              <span style="font-family:'Courier Prime',monospace; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#8A7E63;">Email</span>
+              <input type="email" placeholder="hello@example.com" style="width:100%; box-sizing:border-box; margin-top:8px; padding:8px 2px; background:transparent; border:none; border-bottom:1px solid #D6C9A6; font-family:'EB Garamond',serif; font-size:18px; color:#33301F;">
+            </label>
+            <label style="display:block;">
+              <span style="font-family:'Courier Prime',monospace; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#8A7E63;">The date (or season)</span>
+              <input type="text" placeholder="Golden hour, October 2026" style="width:100%; box-sizing:border-box; margin-top:8px; padding:8px 2px; background:transparent; border:none; border-bottom:1px solid #D6C9A6; font-family:'EB Garamond',serif; font-size:18px; color:#33301F;">
+            </label>
+            <label style="display:block;">
+              <span style="font-family:'Courier Prime',monospace; font-size:10.5px; letter-spacing:0.2em; text-transform:uppercase; color:#8A7E63;">Tell us about your day</span>
+              <textarea rows="3" placeholder="Where, who, and what feels most like you…" style="width:100%; box-sizing:border-box; margin-top:8px; padding:8px 2px; background:transparent; border:none; border-bottom:1px solid #D6C9A6; font-family:'EB Garamond',serif; font-size:18px; color:#33301F; resize:vertical;"></textarea>
+            </label>
+            <button type="submit" style="font-family:'Courier Prime',monospace; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#F2EAD4; background:#2E2A20; border:none; padding:15px; cursor:pointer;" style-hover="background:#433d2c;">Send the note</button>
+          </form>
+        </sc-if>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#211E16; color:rgba(242,234,212,0.85);">
+    <div style="max-width:1180px; margin:0 auto; padding:54px 48px; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; align-items:start;">
+      <div>
+        <div onClick="{{ goHome }}" style="cursor:pointer; display:flex; align-items:center; margin-bottom:14px;">
+          <img src="assets/logos/lockup-paper.png" alt="Laux Creatives" style="height:36px; width:auto; display:block;">
+        </div>
+        <p style="font-family: 'EB Garamond',serif; font-style: italic; font-size: 17px; color: rgba(242,234,212,0.8); margin-top: 14px; max-width: 320px; line-height: 1.5">Serving people well through photography &amp; design.</p>
+      </div>
+      <div>
+        <div style="font-family:'Courier Prime',monospace; font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--accent,#C8964A); margin-bottom:16px;">Explore</div>
+        <sc-for list="{{ footerNav }}" as="item" hint-placeholder-count="4">
+          <div onClick="{{ item.onClick }}" style="font-family:'EB Garamond',serif; font-size:17px; color:rgba(242,234,212,0.85); cursor:pointer; margin-bottom:8px;">{{ item.label }}</div>
+        </sc-for>
+      </div>
+      <div>
+        <div style="font-family:'Courier Prime',monospace; font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--accent,#C8964A); margin-bottom:16px;">Studio</div>
+        <div style="font-family:'EB Garamond',serif; font-size:17px; color:rgba(242,234,212,0.85); line-height:1.7;">evan@lauxcreatives.com<br>www.lauxcreatives.com<br>Chicago &amp; Beyond</div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(242,234,212,0.16); padding:20px 48px; display:flex; justify-content:space-between; font-family:'Courier Prime',monospace; font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:rgba(242,234,212,0.6);">
+      <span>Est. 2024 · Evan &amp; Alexis Laux</span>
+      <span>Photography · Design · Storytelling</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:860},&quot;photoTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Warm Film&quot;,&quot;Sepia&quot;,&quot;Black &amp; White&quot;],&quot;default&quot;:&quot;Warm Film&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#6e8398&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;mastheadCaps&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { screen: 'Home', filter: 'All', sent: false };
+
+  go(screen) {
+    this.setState({ screen, sent: false });
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0 });
+  }
+
+  renderVals() {
+    const accent = this.props.accent ?? '#C8964A';
+    const caps = this.props.mastheadCaps ?? false;
+    const toneMap = {
+      'Warm Film': 'sepia(.12) saturate(.95) contrast(1.02) brightness(1.02)',
+      'Sepia': 'sepia(.55) saturate(.9) contrast(1.04) brightness(1.0)',
+      'Black & White': 'grayscale(1) contrast(1.05) brightness(1.02)',
+    };
+    const photoFilter = toneMap[this.props.photoTone ?? 'Warm Film'];
+
+    const rootStyle = {
+      background: '#EBE2C9',
+      minHeight: '100vh',
+      '--accent': accent,
+      '--photo-filter': photoFilter,
+      '--mh-tf': caps ? 'uppercase' : 'none',
+      '--mh-ls': caps ? '0.005em' : '-0.01em',
+    };
+
+    const screen = this.state.screen;
+    const items = ['Home', 'Portfolio', 'About', 'Investment', 'Contact'];
+    const navItems = items.filter((l) => l !== 'Contact').map((label) => ({
+      label,
+      onClick: () => this.go(label),
+      style: {
+        fontFamily: "'Courier Prime',monospace",
+        fontSize: '11px',
+        letterSpacing: '0.24em',
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        color: screen === label ? accent : '#544D38',
+        borderBottom: screen === label ? ('1px solid ' + accent) : '1px solid transparent',
+        paddingBottom: '3px',
+      },
+    }));
+    const footerNav = items.map((label) => ({ label, onClick: () => this.go(label) }));
+
+    // Portfolio
+    const PORTFOLIO = [
+      { src: 'IMG_9828.jpg', cat: 'Weddings', cap: 'the whole party in motion' },
+      { src: 'IMG_0092.jpg', cat: 'Weddings', cap: 'walking into forever' },
+      { src: 'IMG_0374.jpg', cat: 'Engagements', cap: 'held still for a second' },
+      { src: 'IMG_6684.jpg', cat: 'Engagements', cap: 'golden hour, hers' },
+      { src: 'IMG_0644.jpg', cat: 'Engagements', cap: 'a field, the two of them' },
+      { src: 'DSCF3673.jpg', cat: 'Portraits', cap: 'soft window light' },
+      { src: 'IMG_8504.jpg', cat: 'Family', cap: 'the people who showed up' },
+      { src: 'IMG_9244.jpg', cat: 'Family', cap: 'laughing, unposed' },
+      { src: 'IMG_7351-2.jpg', cat: 'Portraits', cap: '35mm · the in-between' },
+    ];
+    const CATS = ['All', 'Weddings', 'Engagements', 'Family', 'Portraits'];
+    const filter = this.state.filter;
+    const cats = CATS.map((label) => {
+      const active = filter === label;
+      return {
+        label,
+        onClick: () => this.setState({ filter: label }),
+        style: {
+          fontFamily: "'Courier Prime',monospace",
+          fontSize: '11px',
+          letterSpacing: '0.18em',
+          textTransform: 'uppercase',
+          cursor: 'pointer',
+          padding: '7px 16px',
+          borderRadius: '999px',
+          border: '1px solid ' + (active ? 'transparent' : '#C6B894'),
+          background: active ? accent : 'transparent',
+          color: active ? '#2E2A20' : '#8A7E63',
+        },
+      };
+    });
+    const shown = PORTFOLIO.filter((p) => filter === 'All' || p.cat === filter);
+    const portfolioShown = shown.map((p, i) => ({
+      src: 'assets/photos/' + p.src,
+      label: 'Fig. 0' + ((i % 9) + 1) + ' — ' + p.cap,
+      imgStyle: {
+        width: '100%',
+        height: (i % 3 === 0 ? 360 : 260) + 'px',
+        objectFit: 'cover',
+        display: 'block',
+        filter: photoFilter,
+      },
+    }));
+
+    const services = [
+      { title: 'Weddings', desc: 'Full-day coverage, from getting ready to the last dance.' },
+      { title: 'Engagements', desc: 'A relaxed session to remember how this began.' },
+      { title: 'Family', desc: 'Unposed, in-between, real — the people who showed up.' },
+      { title: 'Portraits', desc: 'Honest light, honest you. 35mm and digital.' },
+    ];
+
+    // Investment — wedding packages
+    const PACKAGES = [
+      {
+        name: 'The First Package',
+        coverage: '4–5 hours',
+        price: '$1,750',
+        featured: false,
+        includes: [
+          'Engagement session included',
+          '1 wedding photographer (myself)',
+          'Next-day teasers',
+          'Online gallery within 6 weeks',
+        ],
+      },
+      {
+        name: 'The Second Package',
+        coverage: '6–8 hours',
+        price: '$2,000',
+        featured: false,
+        includes: [
+          'Engagement session included',
+          '1 wedding photographer',
+          'Next-day teasers',
+          'Online gallery within 6 weeks',
+        ],
+      },
+      {
+        name: 'The Third Package',
+        coverage: '8 hours',
+        price: '$2,500',
+        featured: true,
+        includes: [
+          'Engagement session included',
+          '2 wedding photographers',
+          'Next-day teasers',
+          'Online gallery within 6 weeks',
+        ],
+      },
+      {
+        name: 'The Fourth Package',
+        coverage: '8 hours',
+        price: '$3,750',
+        featured: false,
+        includes: [
+          'Engagement session included',
+          '1 photographer & 1 videographer',
+          'Next-day teasers',
+          'Online gallery in 4–6 weeks',
+          'Documentary-style video within 6 weeks',
+          'Wide-angle video of the ceremony within 6 weeks',
+        ],
+      },
+    ];
+    const packages = PACKAGES.map((p) => {
+      const pAccent = p.featured ? '#F2EAD4' : accent;
+      return ({
+      name: p.name,
+      coverage: p.coverage,
+      price: p.price,
+      includes: p.includes,
+      onClick: () => this.go('Contact'),
+      cardStyle: {
+        display: 'flex',
+        flexDirection: 'column',
+        background: p.featured ? '#2E2A20' : '#F4EDDB',
+        color: p.featured ? '#F2EAD4' : '#33301F',
+        border: '1px solid ' + (p.featured ? '#2E2A20' : '#DCD0B0'),
+        boxShadow: '0 14px 34px rgba(46,42,32,0.20)',
+        padding: '32px 28px',
+        '--accent': pAccent,
+      },
+      eyebrowStyle: {
+        fontFamily: "'Courier Prime',monospace",
+        fontSize: '10.5px',
+        letterSpacing: '0.24em',
+        textTransform: 'uppercase',
+        color: p.featured ? pAccent : '#8A7E63',
+      },
+      coverageStyle: {
+        fontFamily: "'Courier Prime',monospace",
+        fontSize: '11px',
+        letterSpacing: '0.2em',
+        textTransform: 'uppercase',
+        color: p.featured ? 'rgba(242,234,212,0.7)' : '#8A7E63',
+        marginTop: '4px',
+      },
+      nameStyle: {
+        fontFamily: "'Bringbold',serif",
+        fontSize: '24px',
+        lineHeight: '1.05',
+        whiteSpace: 'nowrap',
+        letterSpacing: '-0.01em',
+        marginTop: '14px',
+        color: p.featured ? '#F2EAD4' : '#33301F',
+      },
+      ruleStyle: {
+        height: '1px',
+        background: p.featured ? 'rgba(242,234,212,0.2)' : '#D6C9A6',
+        margin: '20px 0',
+      },
+      items: p.includes.map((t) => ({
+        text: t,
+        style: {
+          fontFamily: "'EB Garamond',serif",
+          fontSize: '16.5px',
+          lineHeight: '1.5',
+          color: p.featured ? 'rgba(242,234,212,0.9)' : '#544D38',
+          paddingLeft: '18px',
+          position: 'relative',
+        },
+      })),
+      priceLabelStyle: {
+        fontFamily: "'Courier Prime',monospace",
+        fontSize: '10px',
+        letterSpacing: '0.24em',
+        textTransform: 'uppercase',
+        color: p.featured ? 'rgba(242,234,212,0.6)' : '#8A7E63',
+      },
+      priceStyle: {
+        fontFamily: "'Bringbold',serif",
+        fontSize: p.price === 'Inquire' ? '30px' : '42px',
+        letterSpacing: '-0.01em',
+        color: p.featured ? pAccent : '#33301F',
+        marginTop: '2px',
+      },
+      btnStyle: {
+        marginTop: '22px',
+        fontFamily: "'Courier Prime',monospace",
+        fontSize: '11px',
+        letterSpacing: '0.2em',
+        textTransform: 'uppercase',
+        textAlign: 'center',
+        cursor: 'pointer',
+        padding: '13px',
+        border: '1px solid ' + (p.featured ? 'rgba(242,234,212,0.45)' : '#8A7E63'),
+        background: p.featured ? pAccent : 'transparent',
+        color: p.featured ? '#2E2A20' : '#33301F',
+      },
+    });
+    });
+
+    return {
+      rootStyle,
+      isHome: screen === 'Home',
+      isPortfolio: screen === 'Portfolio',
+      isAbout: screen === 'About',
+      isInvestment: screen === 'Investment',
+      isContact: screen === 'Contact',
+      navItems,
+      footerNav,
+      cats,
+      portfolioShown,
+      services,
+      packages,
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      goHome: () => this.go('Home'),
+      goPortfolio: () => this.go('Portfolio'),
+      goAbout: () => this.go('About'),
+      goInvestment: () => this.go('Investment'),
+      goContact: () => this.go('Contact'),
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      reset: () => this.setState({ sent: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>

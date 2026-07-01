@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+.thumbnail
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Wrangler / Cloudflare
+.wrangler/

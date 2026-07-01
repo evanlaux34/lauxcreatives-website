@@ -1,0 +1,26 @@
+<!-- @dsCard group="Spacing" viewport="700x190" name="Shadows & Corners" subtitle="Soft warm print-lift shadows; square corners" -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin:0; background:var(--surface-page); padding:30px 24px; font-family:var(--font-label); }
+  .row { display:flex; gap:26px; align-items:flex-end; }
+  .item { display:flex; flex-direction:column; align-items:center; gap:12px; }
+  .box { width:120px; height:78px; background:var(--surface-card); border:1px solid var(--border-card); }
+  .raise { box-shadow:var(--shadow-raise); }
+  .card { box-shadow:var(--shadow-card); }
+  .sheet { box-shadow:var(--shadow-sheet); }
+  .lbl { font-size:10.5px; color:var(--text-meta); letter-spacing:0.1em; text-transform:uppercase; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item"><div class="box raise"></div><span class="lbl">raise · hover</span></div>
+    <div class="item"><div class="box card"></div><span class="lbl">card · print</span></div>
+    <div class="item"><div class="box sheet"></div><span class="lbl">sheet</span></div>
+    <div class="item"><div class="box" style="border-radius:var(--radius-sm)"></div><span class="lbl">radius-sm · 2px</span></div>
+  </div>
+</body>
+</html>

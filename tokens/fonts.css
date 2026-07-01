@@ -1,0 +1,25 @@
+/* ============================================================
+   Laux Creatives — Webfonts
+   Bringbold is the custom display/headline face (Regular +
+   Oblique), shipped with the system. EB Garamond and Courier
+   Prime load from Google Fonts (see the @import in
+   tokens/typography.css).
+   ============================================================ */
+
+@font-face {
+  font-family: 'Bringbold';
+  src: url('../assets/fonts/Bringbold-Regular.otf') format('opentype'),
+       url('../assets/fonts/Bringbold-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bringbold';
+  src: url('../assets/fonts/Bringbold-Oblique.otf') format('opentype'),
+       url('../assets/fonts/Bringbold-Oblique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}

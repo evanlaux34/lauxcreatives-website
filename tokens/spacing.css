@@ -1,0 +1,30 @@
+/* ============================================================
+   Laux Creatives — Spacing & Layout Tokens
+   Generous, editorial, gallery-wall whitespace.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) ---------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 22px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 56px;
+  --space-9: 64px;
+  --space-10: 84px;   /* section vertical rhythm */
+
+  /* ---- Semantic spacing ------------------------------------ */
+  --pad-section-y: var(--space-10);  /* 84px — between sections */
+  --pad-section-x: var(--space-9);   /* 64px — page gutter */
+  --pad-card: var(--space-4);        /* photo-card inner mat */
+  --gap-grid: 18px;                  /* gallery grid gap */
+  --gap-stack: var(--space-5);       /* stacked paragraphs */
+
+  /* ---- Layout --------------------------------------------- */
+  --measure: 520px;        /* ideal body line length */
+  --container-max: 1180px; /* page / brand sheet width */
+  --stage-pad: 56px 32px;  /* mat board around the sheet */
+}

@@ -1,0 +1,56 @@
+/* ============================================================
+   Laux Creatives — Color Tokens
+   Warm, faded, lived-in. Pulled straight from film:
+   golden-hour skin, sage gowns, aged brick, ivory paper.
+   ============================================================ */
+
+:root {
+  /* ---- Base palette ---------------------------------------- */
+  --lc-sepia-ink: #2E2A20;      /* near-black warm brown — primary dark */
+  --lc-sepia-ink-deep: #211E16; /* footer / deepest shade */
+  --lc-aged-olive: #6E7355;     /* sage / olive green */
+  --lc-golden-honey: #B98A45;   /* warm gold */
+  --lc-accent: #C8964A;         /* brighter gold accent (labels, rules) */
+  --lc-dusty-blue: #6E8398;     /* muted blue-grey */
+  --lc-ivory-paper: #EBE2C9;    /* primary warm paper surface */
+  --lc-ivory-deep: #E3D9BD;     /* alternating section paper */
+  --lc-ivory-light: #F4EDDB;    /* lifted card paper */
+  --lc-sand: #DED4B8;           /* outermost stage / mat board */
+
+  /* ---- Ink / text ------------------------------------------ */
+  --lc-ink: #33301F;            /* primary text on paper */
+  --lc-ink-soft: #544D38;       /* body text */
+  --lc-ink-muted: #8A7E63;      /* captions, meta, film edge */
+  --lc-ink-faint: #9A8E6F;      /* faintest labels */
+  --lc-paper-text: #F2EAD4;     /* text on dark/photo surfaces */
+
+  /* ---- Hairlines / borders --------------------------------- */
+  --lc-line: #D6C9A6;           /* hairline rule on paper */
+  --lc-line-soft: #DCD0B0;      /* card border on paper */
+  --lc-line-on-dark: rgba(242,234,212,0.28); /* inset frame on dark */
+  --lc-line-on-photo: rgba(242,234,212,0.55);/* inset frame on photo */
+
+  /* ---- Semantic aliases ------------------------------------ */
+  --surface-stage: var(--lc-sand);
+  --surface-page: var(--lc-ivory-paper);
+  --surface-page-alt: var(--lc-ivory-deep);
+  --surface-card: var(--lc-ivory-light);
+  --surface-dark: var(--lc-sepia-ink);
+  --surface-footer: var(--lc-sepia-ink-deep);
+
+  --text-display: var(--lc-ink);
+  --text-body: var(--lc-ink-soft);
+  --text-heading: var(--lc-ink);
+  --text-meta: var(--lc-ink-muted);
+  --text-on-dark: var(--lc-paper-text);
+  --text-accent: var(--lc-accent);
+
+  --border-hairline: var(--lc-line);
+  --border-card: var(--lc-line-soft);
+
+  /* ---- Semantic status (kept warm & muted) ----------------- */
+  --status-positive: var(--lc-aged-olive);
+  --status-info: var(--lc-dusty-blue);
+  --status-warning: var(--lc-golden-honey);
+  --status-danger: #9C4A38;     /* warm faded brick red */
+}

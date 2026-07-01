@@ -1,0 +1,51 @@
+/* ============================================================
+   Laux Creatives — Typography Tokens
+   Three voices:
+     Display   — Bringbold      (custom headline face; shipped
+                 with the system — see tokens/fonts.css. The
+                 'LauxCreatives' logotype itself ships as art —
+                 see the Logo component.)
+     Editorial — EB Garamond     (body & quotes)
+     Labels    — Courier Prime   (captions & film edge)
+   ============================================================ */
+
+@import url('./fonts.css');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Courier+Prime:wght@400;700&display=swap');
+
+:root {
+  /* ---- Families -------------------------------------------- */
+  /* Bringbold is the custom display/headline face, shipped with
+     the system (a bold, rounded retro serif). Cooper / EB Garamond
+     are graceful fallbacks only. */
+  --font-display: 'Bringbold', 'Cooper Black', 'EB Garamond', serif;
+  --font-editorial: 'EB Garamond', Georgia, serif;
+  --font-label: 'Courier Prime', 'Courier New', monospace;
+
+  /* ---- Display scale (Bringbold) --------------------------- */
+  /* Bringbold is inherently heavy, so display weight is normal (400)
+     and tracking runs slightly tight. */
+  --type-wordmark: 124px;   /* cover headline */
+  --type-display-1: 78px;   /* hero headline */
+  --type-display-2: 58px;   /* section headline */
+  --type-display-3: 40px;   /* sub-headline / signature */
+  --type-display-weight: 400;
+  --type-display-leading: 1.0;
+
+  /* ---- Editorial scale (EB Garamond) ----------------------- */
+  --type-lead: 34px;        /* large italic pull-quote */
+  --type-body-lg: 19px;     /* primary body */
+  --type-body: 17px;        /* body */
+  --type-body-sm: 15px;     /* small body */
+  --type-body-leading: 1.62;
+  --type-body-weight: 400;
+
+  /* ---- Label scale (Courier Prime) ------------------------- */
+  --type-label: 12px;       /* section labels */
+  --type-label-sm: 10.5px;  /* captions / film edge */
+  --type-label-xs: 9.5px;   /* corner tags */
+  --type-label-weight: 400;
+  --type-label-tracking: 0.32em;   /* eyebrow / section labels */
+  --type-label-tracking-sm: 0.18em;/* captions */
+  --type-label-tracking-lg: 0.34em;/* widest film-edge tags */
+  --type-label-leading: 1.5;
+}

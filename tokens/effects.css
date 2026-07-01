@@ -1,0 +1,49 @@
+/* ============================================================
+   Laux Creatives — Effects: radii, borders, shadows, grain
+   The brand is FLAT and SQUARE — no rounded corners. Depth
+   comes from soft warm drop-shadows (lifted photo prints) and
+   thin inset hairline frames, plus an optional film-grain wash.
+   ============================================================ */
+
+:root {
+  /* ---- Corner radii ---------------------------------------- */
+  /* Square by default — prints, mat board, and film have no
+     rounded corners. A whisper of radius only on inputs/chips. */
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-pill: 999px;
+
+  /* ---- Border widths --------------------------------------- */
+  --border-hair: 1px;
+  --inset-frame-gap: 18px;  /* offset of inset hairline frame */
+
+  /* ---- Shadows (warm, soft — a print resting on paper) ----- */
+  --shadow-sheet: 0 26px 64px rgba(46,42,32,0.26);  /* the brand sheet */
+  --shadow-card: 0 14px 34px rgba(46,42,32,0.20);   /* photo print on paper */
+  --shadow-card-dark: 0 14px 34px rgba(0,0,0,0.30); /* photo print on dark */
+  --shadow-raise: 0 6px 18px rgba(46,42,32,0.14);   /* subtle hover lift */
+
+  /* ---- Photo treatment ------------------------------------- */
+  --photo-filter-warm: sepia(0.12) saturate(0.95) contrast(1.02) brightness(1.02); /* @kind other */
+  --photo-filter-sepia: sepia(0.55) saturate(0.85) contrast(1.03); /* @kind other */
+  --photo-filter-bw: grayscale(1) contrast(1.06); /* @kind other */
+  --grain-opacity: 0.20; /* @kind other */
+
+  /* ---- Motion ---------------------------------------------- */
+  /* Quiet, filmic. Slow fades and gentle eases — no bounce. */
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1); /* @kind other */
+  --dur-fast: 160ms; /* @kind other */
+  --dur: 320ms; /* @kind other */
+  --dur-slow: 600ms; /* @kind other */
+}
+
+/* Reusable film-grain overlay. Apply to a positioned element:
+   <div class="lc-grain"></div> inside an `overflow:hidden` parent. */
+.lc-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}

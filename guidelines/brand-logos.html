@@ -1,0 +1,44 @@
+<!-- @dsCard group="Brand" viewport="720x320" name="Logo Suite" subtitle="LC mark, logotype lockup, circle-mark & gold coin badge" -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin:0; background:var(--surface-page); padding:0; }
+  .grid { display:grid; grid-template-columns:1fr 1fr 1fr; }
+  .cell { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; min-height:160px; padding:22px; position:relative; }
+  .paper { background:var(--surface-card); border:1px solid var(--lc-line-soft); }
+  .deep { background:var(--surface-page-alt); border:1px solid var(--lc-line-soft); }
+  .dark { background:var(--surface-dark); }
+  .blue { background:var(--lc-dusty-blue); }
+  .tag { position:absolute; left:14px; top:11px; font-family:var(--font-label); font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--lc-ink-muted); }
+  .tag.on-dark { color:rgba(242,234,212,0.6); }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../_ds_bundle.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+
+const { Logo } = window.LauxCreativesDesignSystem_2042c0;
+function Suite() {
+  return (
+    <div className="grid">
+        <div className="cell paper"><span className="tag">Mark · Ink</span><Logo variant="mark" size={88} tone="ink" /></div>
+        <div className="cell dark"><span className="tag on-dark">Mark · Gold</span><Logo variant="mark" size={88} tone="gold" /></div>
+        <div className="cell blue"><span className="tag on-dark">Mark · Paper</span><Logo variant="mark" size={88} tone="paper" /></div>
+        <div className="cell paper"><span className="tag">Lockup</span><Logo variant="lockup" size={34} tone="ink" /></div>
+        <div className="cell dark"><span className="tag on-dark">Circle</span><Logo variant="circle" size={118} tone="paper" /></div>
+        <div className="cell deep"><span className="tag">Badge</span><Logo variant="badge" size={128} /></div>
+      </div>);
+
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Suite />);
+</script>
+</body>
+</html>

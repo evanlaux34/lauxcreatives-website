@@ -1,0 +1,22 @@
+<!-- @dsCard group="Brand" viewport="700x200" name="Photo Treatment" subtitle="Warm Film · Sepia · Black & White" -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin:0; background:var(--surface-page); padding:20px; font-family:var(--font-label); }
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .item { background:var(--surface-card); padding:12px 12px 0; box-shadow:var(--shadow-card); }
+  img { width:100%; height:120px; object-fit:cover; display:block; }
+  .cap { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-meta); padding:10px 2px 12px; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="item"><img src="../assets/photos/IMG_0092.jpg" style="filter:var(--photo-filter-warm)"><div class="cap">Warm Film — default</div></div>
+    <div class="item"><img src="../assets/photos/IMG_0092.jpg" style="filter:var(--photo-filter-sepia)"><div class="cap">Sepia</div></div>
+    <div class="item"><img src="../assets/photos/IMG_0092.jpg" style="filter:var(--photo-filter-bw)"><div class="cap">Black &amp; White</div></div>
+  </div>
+</body>
+</html>
