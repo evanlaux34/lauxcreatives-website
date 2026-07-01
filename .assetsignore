@@ -1,0 +1,8 @@
+.git
+.gitignore
+.assetsignore
+.DS_Store
+.thumbnail
+wrangler.toml
+node_modules
+_adherence.oxlintrc.json
