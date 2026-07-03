@@ -48,8 +48,8 @@ function Footer({ onNav }) {
           </div>
           <div style={{ fontFamily: 'var(--font-label)', fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'var(--lc-accent)', margin: '22px 0 16px' }}>Find Us On</div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
-            <FooterLink href={KNOT_URL}>The Knot<span style={{ fontSize: '11px', marginLeft: '5px', opacity: 0.8 }}>↗</span></FooterLink>
-            <FooterLink href={INSTAGRAM_URL}>Instagram<span style={{ fontSize: '11px', marginLeft: '5px', opacity: 0.8 }}>↗</span></FooterLink>
+            <FooterLink href={KNOT_URL}>The Knot<span style={{ marginLeft: '7px', fontSize: '15px' }}>→</span></FooterLink>
+            <FooterLink href={INSTAGRAM_URL}>Instagram<span style={{ marginLeft: '7px', fontSize: '15px' }}>→</span></FooterLink>
           </div>
         </div>
       </div>
