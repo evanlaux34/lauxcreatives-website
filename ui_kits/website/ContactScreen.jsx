@@ -33,6 +33,8 @@ function ContactScreen() {
               <Input label="Your names" placeholder="John Doe" />
               <Input label="Email" type="email" placeholder="hello@example.com" />
               <Input label="The date" placeholder="10/1/2026" />
+              <Input label="Where are we headed?" placeholder="Venue? City? State?" />
+              <Input label="How did you find Laux Creatives?" placeholder="Facebook, Instagram, The Knot, referral?" />
               <Input label="Tell us more!" multiline placeholder="What else should we know?" />
               <Button variant="primary" size="lg" as="button" type="submit">Send the note</Button>
             </form>
