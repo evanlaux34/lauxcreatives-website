@@ -72,7 +72,7 @@ function ContactScreen() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: 'New inquiry from the Laux Creatives website',
+          subject: 'New Inquiry!',
           from_name: 'Laux Creatives Website',
           replyto: values.email,
           'Your names': values.names,
