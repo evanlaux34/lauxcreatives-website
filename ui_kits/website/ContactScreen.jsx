@@ -1,6 +1,11 @@
 /* global React */
 const { Eyebrow, Input, Button } = window.LauxCreativesDesignSystem_2042c0;
 
+// Web3Forms delivers submissions to evan@lauxcreatives.com. This access key is
+// public by design — it only routes mail to the verified address.
+const WEB3FORMS_KEY = '3dc2c42e-67b8-4666-991f-24b2d2228b1d';
+const ENDPOINT = 'https://api.web3forms.com/submit';
+
 const FIELDS = [
   { name: 'names', label: 'Your names', placeholder: 'John Doe' },
   { name: 'email', label: 'Email', type: 'email', placeholder: 'hello@example.com' },
@@ -15,9 +20,12 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function ContactScreen() {
   const [sent, setSent] = React.useState(false);
+  const [sending, setSending] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState('');
   const [values, setValues] = React.useState(EMPTY);
   const [errors, setErrors] = React.useState({});
   const [shaking, setShaking] = React.useState({});
+  const botRef = React.useRef(null);
   const { isMobile, isTablet } = window.useViewport();
 
   const onField = (name) => (e) => {
@@ -37,7 +45,7 @@ function ContactScreen() {
     return errs;
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) {
@@ -52,10 +60,43 @@ function ContactScreen() {
       return;
     }
     setErrors({});
-    setSent(true);
+    // Honeypot: a real person never fills this hidden field. If it's set, quietly
+    // drop the (bot) submission while still showing the thank-you.
+    if (botRef.current && botRef.current.value) { setSent(true); return; }
+
+    setSubmitError('');
+    setSending(true);
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: 'New inquiry from the Laux Creatives website',
+          from_name: 'Laux Creatives Website',
+          replyto: values.email,
+          'Your names': values.names,
+          'Email': values.email,
+          'The date': values.date,
+          'Where are we headed?': values.headed,
+          'How did you find Laux Creatives?': values.found,
+          'Tell us more!': values.more,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSent(true);
+      } else {
+        setSubmitError(data.message || 'Something went wrong sending your note. Please try again, or email evan@lauxcreatives.com.');
+      }
+    } catch (err) {
+      setSubmitError('Could not send — please check your connection and try again, or email evan@lauxcreatives.com.');
+    } finally {
+      setSending(false);
+    }
   };
 
-  const reset = () => { setValues(EMPTY); setErrors({}); setShaking({}); setSent(false); };
+  const reset = () => { setValues(EMPTY); setErrors({}); setShaking({}); setSubmitError(''); setSending(false); setSent(false); };
 
   return (
     <div style={{ background: 'var(--surface-page)' }}>
@@ -89,6 +130,9 @@ function ContactScreen() {
             </div>
           ) : (
             <form noValidate onSubmit={onSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              {/* Honeypot — hidden from real users, catches bots. */}
+              <input ref={botRef} type="text" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true"
+                style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} />
               {FIELDS.map((f) => {
                 const err = errors[f.name];
                 return (
@@ -113,7 +157,10 @@ function ContactScreen() {
                   </div>
                 );
               })}
-              <Button variant="primary" size="lg" as="button" type="submit">Send the note</Button>
+              {submitError ? (
+                <div style={{ fontFamily: 'var(--font-editorial)', fontSize: '15px', lineHeight: 1.5, color: 'var(--status-danger)' }}>{submitError}</div>
+              ) : null}
+              <Button variant="primary" size="lg" as="button" type="submit" disabled={sending}>{sending ? 'Sending…' : 'Send the note'}</Button>
             </form>
           )}
         </div>
