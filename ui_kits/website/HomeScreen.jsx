@@ -59,7 +59,7 @@ function HomeScreen({ onNav }) {
       {/* Featured work */}
       <section style={{ background: 'var(--surface-page-alt)', padding: pad }}>
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
-          <SectionHeader number="01" title="Featured Work" meta="Weddings · Engagements · Family" style={{ marginBottom: '36px' }} />
+          <SectionHeader number="01" title="Featured Work" meta="Weddings · Engagements · Family" style={{ marginBottom: '36px', ...(isMobile ? { flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'flex-start', gap: '10px' } : {}) }} />
           <div style={{ display: 'grid', gridTemplateColumns: featCols, gap: '18px' }}>
             {heroCard ? (
               <div style={{ gridRow: 'span 2', display: 'flex' }}>
