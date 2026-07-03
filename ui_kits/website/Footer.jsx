@@ -59,7 +59,7 @@ function Footer({ onNav }) {
         justifyContent: 'space-between', textAlign: isMobile ? 'center' : 'left',
         fontFamily: 'var(--font-label)', fontSize: '10px', letterSpacing: '0.24em', textTransform: 'uppercase', color: 'rgba(242,234,212,0.6)',
       }}>
-        <span>Est. 2024 · Evan &amp; Alexis Laux</span>
+        <span>Est. 2024</span>
         <span>Photography · Design · Storytelling</span>
       </div>
     </footer>
