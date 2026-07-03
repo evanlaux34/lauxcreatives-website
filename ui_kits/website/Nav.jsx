@@ -24,13 +24,13 @@ function Nav({ current, onNav }) {
     <header style={{
       position: 'sticky', top: 0, zIndex: 30,
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-      padding: isMobile ? '13px 20px' : '18px 46px',
+      padding: isMobile ? '12px 20px' : '15px 46px',
       background: 'rgba(235,226,201,0.92)',
       backdropFilter: 'saturate(1.1)',
       borderBottom: '1px solid var(--lc-line)',
     }}>
       <div style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }} onClick={() => go('Home')}>
-        <img src="../../assets/logos/lockup-ink.png" alt="Laux Creatives" style={{ height: isMobile ? '28px' : '34px', width: 'auto', display: 'block' }} />
+        <img src="../../assets/logos/lockup-ink.png" alt="Laux Creatives" style={{ height: isMobile ? '36px' : '46px', width: 'auto', display: 'block' }} />
       </div>
 
       {isMobile ? (
