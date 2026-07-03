@@ -1,6 +1,7 @@
 /* global React */
 
 const KNOT_URL = 'https://www.theknot.com/marketplace/laux-creatives-warrenville-il-2103719';
+const INSTAGRAM_URL = 'https://www.instagram.com/evan_laux';
 
 function FooterLink({ href, children }) {
   const [hover, setHover] = React.useState(false);
@@ -46,7 +47,10 @@ function Footer({ onNav }) {
             Chicago &amp; Beyond
           </div>
           <div style={{ fontFamily: 'var(--font-label)', fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'var(--lc-accent)', margin: '22px 0 16px' }}>Find Us On</div>
-          <FooterLink href={KNOT_URL}>The Knot<span style={{ fontSize: '11px', marginLeft: '5px', opacity: 0.8 }}>↗</span></FooterLink>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+            <FooterLink href={KNOT_URL}>The Knot<span style={{ fontSize: '11px', marginLeft: '5px', opacity: 0.8 }}>↗</span></FooterLink>
+            <FooterLink href={INSTAGRAM_URL}>Instagram<span style={{ fontSize: '11px', marginLeft: '5px', opacity: 0.8 }}>↗</span></FooterLink>
+          </div>
         </div>
       </div>
       <div style={{
