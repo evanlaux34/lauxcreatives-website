@@ -1,18 +1,17 @@
 /* global React */
 const { Eyebrow, Tag, PhotoCard, SectionHeader } = window.LauxCreativesDesignSystem_2042c0;
 
-const PORTFOLIO = [
-  { src: 'IMG_9828.jpg', cat: 'Weddings', cap: 'the whole party in motion' },
-  { src: 'IMG_0092.jpg', cat: 'Weddings', cap: 'walking into forever' },
-  { src: 'IMG_0374.jpg', cat: 'Engagements', cap: 'held still for a second' },
-  { src: 'IMG_6684.jpg', cat: 'Engagements', cap: 'golden hour, hers' },
-  { src: 'IMG_0644.jpg', cat: 'Engagements', cap: 'a field, the two of them' },
-  { src: 'DSCF3673.jpg', cat: 'Portraits', cap: 'soft window light' },
-  { src: 'IMG_8504.jpg', cat: 'Family', cap: 'the people who showed up' },
-  { src: 'IMG_9244.jpg', cat: 'Family', cap: 'laughing, unposed' },
-  { src: 'IMG_7351-2.jpg', cat: 'Portraits', cap: '35mm · the in-between' },
+// Portfolio galleries — each category maps to its folder under assets/photos/
+// and the photos inside it. To update a gallery, edit the `photos` list to match
+// the files in assets/photos/<folder>/ (that folder is the source of truth).
+const GALLERIES = [
+  { cat: 'Weddings', folder: 'weddings', photos: ['IMG_9828.jpg', 'IMG_0092.jpg'] },
+  { cat: 'Engagements', folder: 'engagements', photos: ['IMG_0374.jpg', 'IMG_6684.jpg', 'IMG_0644.jpg'] },
+  { cat: 'Family', folder: 'family', photos: ['IMG_8504.jpg', 'IMG_9244.jpg'] },
+  { cat: 'Portraits', folder: 'portraits', photos: ['DSCF3673.jpg', 'IMG_7351-2.jpg'] },
 ];
-const CATS = ['All', 'Weddings', 'Engagements', 'Family', 'Portraits'];
+const CATS = ['All', ...GALLERIES.map((g) => g.cat)];
+const PORTFOLIO = GALLERIES.flatMap((g) => g.photos.map((file) => ({ src: `${g.folder}/${file}`, cat: g.cat })));
 
 function PortfolioScreen() {
   const [filter, setFilter] = React.useState('All');

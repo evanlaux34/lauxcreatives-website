@@ -63,15 +63,15 @@ function HomeScreen({ onNav }) {
           <div style={{ display: 'grid', gridTemplateColumns: featCols, gap: '18px' }}>
             {heroCard ? (
               <div style={{ gridRow: 'span 2', display: 'flex' }}>
-                <PhotoCard src="../../assets/photos/IMG_9828.jpg" caption="Weddings" fig="Fig. 01" height={520} fill style={{ flex: '1 1 auto' }} />
+                <PhotoCard src="../../assets/photos/weddings/IMG_9828.jpg" caption="Weddings" fig="Fig. 01" height={520} fill style={{ flex: '1 1 auto' }} />
               </div>
             ) : (
-              <PhotoCard src="../../assets/photos/IMG_9828.jpg" caption="Weddings" fig="Fig. 01" height={isMobile ? 320 : 300} />
+              <PhotoCard src="../../assets/photos/weddings/IMG_9828.jpg" caption="Weddings" fig="Fig. 01" height={isMobile ? 320 : 300} />
             )}
-            <PhotoCard src="../../assets/photos/IMG_0374.jpg" caption="Engagements" height={smallH} />
-            <PhotoCard src="../../assets/photos/DSCF3673.jpg" caption="Portraits" height={smallH} />
-            <PhotoCard src="../../assets/photos/IMG_6684.jpg" caption="Engagements" height={smallH} />
-            <PhotoCard src="../../assets/photos/IMG_9244.jpg" caption="Family" height={smallH} />
+            <PhotoCard src="../../assets/photos/engagements/IMG_0374.jpg" caption="Engagements" height={smallH} />
+            <PhotoCard src="../../assets/photos/portraits/DSCF3673.jpg" caption="Portraits" height={smallH} />
+            <PhotoCard src="../../assets/photos/engagements/IMG_6684.jpg" caption="Engagements" height={smallH} />
+            <PhotoCard src="../../assets/photos/family/IMG_9244.jpg" caption="Family" height={smallH} />
           </div>
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
             <Button variant="secondary" onClick={() => onNav('Portfolio')}>See the full gallery</Button>
