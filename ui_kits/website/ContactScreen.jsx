@@ -11,7 +11,7 @@ function ContactScreen() {
           <Eyebrow tone="accent" style={{ marginBottom: '20px' }}>Say Hello</Eyebrow>
           <div style={{ fontFamily: 'var(--font-display)', fontSize: isMobile ? '36px' : isTablet ? '46px' : '54px', lineHeight: 1.0, color: 'var(--lc-ink)' }}>Let's tell your story.</div>
           <p style={{ fontFamily: 'var(--font-editorial)', fontSize: isMobile ? '17px' : '19px', lineHeight: 1.62, color: 'var(--lc-ink-soft)', marginTop: '22px', maxWidth: '440px', textWrap: 'pretty' }}>
-            Tell us a little about your day. We read every note ourselves and reply within a few days — no forms-into-the-void here.
+            Tell us a little about your day. We read every note ourselves and reply within 24 hours.
           </p>
           <div style={{ marginTop: '34px', fontFamily: 'var(--font-label)', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--lc-ink-muted)', lineHeight: 2.2 }}>
             Chicago &amp; Beyond
@@ -30,10 +30,10 @@ function ContactScreen() {
             </div>
           ) : (
             <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <Input label="Your names" placeholder="Evan & Alexis" />
+              <Input label="Your names" placeholder="John Doe" />
               <Input label="Email" type="email" placeholder="hello@example.com" />
-              <Input label="The date (or season)" placeholder="Golden hour, October 2026" />
-              <Input label="Tell us about your day" multiline placeholder="Where, who, and what feels most like you…" />
+              <Input label="The date" placeholder="10/1/2026" />
+              <Input label="Tell us more!" multiline placeholder="What else should we know?" />
               <Button variant="primary" size="lg" as="button" type="submit">Send the note</Button>
             </form>
           )}
