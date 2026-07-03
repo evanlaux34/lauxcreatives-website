@@ -30,7 +30,7 @@ function Nav({ current, onNav }) {
       borderBottom: '1px solid var(--lc-line)',
     }}>
       <div style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }} onClick={() => go('Home')}>
-        <img src="../../assets/logos/lockup-ink.png" alt="Laux Creatives" style={{ height: isMobile ? '36px' : '46px', width: 'auto', display: 'block' }} />
+        <img src="../../assets/logos/lockup-ink.png" alt="Laux Creatives" style={{ height: '46px', width: 'auto', display: 'block' }} />
       </div>
 
       {isMobile ? (
