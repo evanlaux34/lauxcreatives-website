@@ -47,7 +47,7 @@ const PACKAGES = [
       'Engagement session included',
       '1 photographer & 1 videographer',
       'Next-day teasers',
-      'Online gallery in 4–6 weeks',
+      'Online gallery within 6 weeks',
       'Documentary-style video within 6 weeks',
       'Wide-angle video of the ceremony within 6 weeks',
     ],
