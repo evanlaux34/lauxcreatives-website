@@ -1,5 +1,22 @@
 /* global React */
 
+const KNOT_URL = 'https://www.theknot.com/marketplace/laux-creatives-warrenville-il-2103719';
+
+function FooterLink({ href, children }) {
+  const [hover, setHover] = React.useState(false);
+  return (
+    <a
+      href={href} target="_blank" rel="noopener noreferrer"
+      onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
+      style={{
+        display: 'inline-block', fontFamily: 'var(--font-editorial)', fontSize: '17px',
+        color: hover ? 'var(--lc-accent)' : 'rgba(242,234,212,0.85)',
+        transition: 'color var(--dur-fast) var(--ease-soft)',
+      }}
+    >{children}</a>
+  );
+}
+
 function Footer({ onNav }) {
   const { isMobile } = window.useViewport();
   return (
@@ -28,6 +45,8 @@ function Footer({ onNav }) {
           <div style={{ fontFamily: 'var(--font-editorial)', fontSize: '17px', color: 'rgba(242,234,212,0.85)', lineHeight: 1.7 }}>
             Chicago &amp; Beyond
           </div>
+          <div style={{ fontFamily: 'var(--font-label)', fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'var(--lc-accent)', margin: '22px 0 16px' }}>Find Us On</div>
+          <FooterLink href={KNOT_URL}>The Knot ↗</FooterLink>
         </div>
       </div>
       <div style={{
