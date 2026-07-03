@@ -46,7 +46,7 @@ function Footer({ onNav }) {
             Chicago &amp; Beyond
           </div>
           <div style={{ fontFamily: 'var(--font-label)', fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'var(--lc-accent)', margin: '22px 0 16px' }}>Find Us On</div>
-          <FooterLink href={KNOT_URL}>The Knot ↗</FooterLink>
+          <FooterLink href={KNOT_URL}>The Knot<span style={{ fontSize: '11px', marginLeft: '5px', opacity: 0.8 }}>↗</span></FooterLink>
         </div>
       </div>
       <div style={{
