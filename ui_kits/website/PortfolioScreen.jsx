@@ -6,7 +6,7 @@ const { Eyebrow, Tag, PhotoCard, SectionHeader } = window.LauxCreativesDesignSys
 // the files in assets/photos/<folder>/ (that folder is the source of truth).
 const GALLERIES = [
   { cat: 'Weddings', folder: 'weddings', photos: ['DSCF8811.jpg', 'DSCF9235.jpg', 'DSCF9568.jpg', 'DSCF9578-2.jpg', 'IMG_0092.jpg', 'IMG_7770.jpg', 'IMG_8256.jpg', 'IMG_8504.jpg', 'IMG_8868.jpg', 'IMG_8979.jpg', 'IMG_9029.jpg', 'IMG_9204.jpg', 'IMG_9649-2.jpg', 'IMG_9828.jpg', 'IMG_9975.jpg'] },
-  { cat: 'Engagements', folder: 'engagements', photos: ['IMG_0002.jpg', 'IMG_0374.jpg', 'IMG_0392.jpg', 'IMG_0434.jpg', 'IMG_0517.jpg', 'IMG_0644.jpg', 'IMG_0861.jpg', 'IMG_6684.jpg', 'IMG_6787.jpg', 'IMG_6926-3.jpg', 'IMG_7141.jpg', 'IMG_7150.jpg', 'IMG_7351-2.jpg', 'IMG_9568.jpg', 'IMG_9808.jpg', 'IMG_9940-2.jpg', 'IMG_9994-2.jpg'] },
+  { cat: 'Engagements', folder: 'engagements', photos: ['IMG_0002.jpg', 'IMG_0861.jpg', 'IMG_0392.jpg', 'IMG_0434.jpg', 'IMG_0517.jpg', 'IMG_0644.jpg', 'IMG_0374.jpg', 'IMG_6684.jpg', 'IMG_6787.jpg', 'IMG_6926-3.jpg', 'IMG_7141.jpg', 'IMG_7150.jpg', 'IMG_7351-2.jpg', 'IMG_9568.jpg', 'IMG_9808.jpg', 'IMG_9940-2.jpg', 'IMG_9994-2.jpg'] },
   { cat: 'Family', folder: 'family', photos: ['IMG_7850-2.jpg', 'IMG_8076.jpg', 'IMG_8266.jpg', 'IMG_8361-3.jpg', 'IMG_8638.jpg', 'IMG_8807.jpg', 'IMG_8861.jpg', 'IMG_8996.jpg', 'IMG_9244.jpg'] },
   { cat: 'Portraits', folder: 'portraits', photos: ['DSCF1730.jpg', 'DSCF1750.jpg', 'DSCF2141.jpg', 'DSCF3673.jpg', 'DSCF3731.jpg', 'DSCF3824.jpg'] },
 ];
