@@ -11,6 +11,15 @@ function Nav({ current, onNav }) {
 
   const go = (s) => { setOpen(false); onNav(s); };
 
+  // Real URL for each screen (so links are crawlable / openable in a new tab),
+  // but intercept normal clicks for instant in-site navigation.
+  const pathFor = (s) => (window.LC_pathForScreen ? window.LC_pathForScreen(s) : (s === 'Home' ? '/' : '/' + s.toLowerCase()));
+  const linkClick = (s) => (e) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button === 1) return; // allow open-in-new-tab
+    e.preventDefault();
+    go(s);
+  };
+
   const linkStyle = (active, extra) => ({
     fontFamily: 'var(--font-label)', fontSize: '11px', letterSpacing: '0.24em',
     textTransform: 'uppercase', cursor: 'pointer',
@@ -29,9 +38,9 @@ function Nav({ current, onNav }) {
       backdropFilter: 'saturate(1.1)',
       borderBottom: '1px solid var(--lc-line)',
     }}>
-      <div style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }} onClick={() => go('Home')}>
-        <img src="../../assets/logos/lockup-ink.png" alt="Laux Creatives" style={{ height: '46px', width: 'auto', display: 'block' }} />
-      </div>
+      <a href="/" onClick={linkClick('Home')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+        <img src="/assets/logos/lockup-ink.png" alt="Laux Creatives" style={{ height: '46px', width: 'auto', display: 'block' }} />
+      </a>
 
       {isMobile ? (
         <React.Fragment>
@@ -60,7 +69,7 @@ function Nav({ current, onNav }) {
               display: 'flex', flexDirection: 'column', gap: '4px', padding: '18px 20px 24px',
             }}>
               {items.map((it) => (
-                <a key={it} onClick={() => go(it)} style={linkStyle(current === it, {
+                <a key={it} href={pathFor(it)} onClick={linkClick(it)} style={linkStyle(current === it, {
                   padding: '12px 0', borderBottom: '1px solid var(--lc-line)', fontSize: '13px',
                 })}>{it}</a>
               ))}
@@ -73,7 +82,7 @@ function Nav({ current, onNav }) {
       ) : (
         <nav style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
           {items.map((it) => (
-            <a key={it} onClick={() => onNav(it)} style={linkStyle(current === it)}>{it}</a>
+            <a key={it} href={pathFor(it)} onClick={linkClick(it)} style={linkStyle(current === it)}>{it}</a>
           ))}
           <Button variant="primary" size="sm" onClick={() => onNav('Contact')}>Inquire</Button>
         </nav>

@@ -20,6 +20,15 @@ function FooterLink({ href, children }) {
 
 function Footer({ onNav }) {
   const { isMobile } = window.useViewport();
+
+  // Real URLs for internal links (crawlable), with instant in-site navigation.
+  const pathFor = (s) => (window.LC_pathForScreen ? window.LC_pathForScreen(s) : (s === 'Home' ? '/' : '/' + s.toLowerCase()));
+  const linkClick = (s) => (e) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button === 1) return;
+    e.preventDefault();
+    onNav(s);
+  };
+
   return (
     <footer style={{ background: 'var(--surface-footer)', color: 'rgba(242,234,212,0.85)' }}>
       <div style={{
@@ -27,9 +36,9 @@ function Footer({ onNav }) {
         display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1.4fr 1fr 1fr', gap: isMobile ? '30px' : '40px', alignItems: 'start',
       }}>
         <div>
-        <div onClick={() => onNav('Home')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', marginBottom: '14px' }}>
-          <img src="../../assets/logos/lockup-paper.png" alt="Laux Creatives" style={{ height: '36px', width: 'auto', display: 'block' }} />
-        </div>
+        <a href="/" onClick={linkClick('Home')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', marginBottom: '14px' }}>
+          <img src="/assets/logos/lockup-paper.png" alt="Laux Creatives" style={{ height: '36px', width: 'auto', display: 'block' }} />
+        </a>
           <p style={{
             fontFamily: 'var(--font-editorial)', fontStyle: 'italic', fontSize: '17px',
             color: 'rgba(242,234,212,0.8)', marginTop: '14px', maxWidth: '320px', lineHeight: 1.5,
@@ -38,7 +47,7 @@ function Footer({ onNav }) {
         <div>
           <div style={{ fontFamily: 'var(--font-label)', fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase', color: 'var(--lc-accent)', marginBottom: '16px' }}>Explore</div>
           {['Home', 'Portfolio', 'About', 'Investment', 'Contact'].map((it) => (
-            <div key={it} onClick={() => onNav(it)} style={{ fontFamily: 'var(--font-editorial)', fontSize: '17px', color: 'rgba(242,234,212,0.85)', cursor: 'pointer', marginBottom: '8px' }}>{it}</div>
+            <a key={it} href={pathFor(it)} onClick={linkClick(it)} style={{ display: 'block', fontFamily: 'var(--font-editorial)', fontSize: '17px', color: 'rgba(242,234,212,0.85)', cursor: 'pointer', marginBottom: '8px' }}>{it}</a>
           ))}
         </div>
         <div>

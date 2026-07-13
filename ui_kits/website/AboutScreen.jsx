@@ -19,15 +19,15 @@ function AboutScreen() {
           <div style={{ fontFamily: 'var(--font-display)', fontSize: isMobile ? '32px' : '40px', color: 'var(--lc-accent)', marginTop: '24px' }}>Evan &amp; Alexis</div>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', alignItems: 'start' }}>
-          <PhotoCard src="../../assets/photos/evan.jpg" tone="bw" caption="Evan" fig="Fig. 01" height={isMobile ? 260 : 360} />
-          <PhotoCard src="../../assets/photos/alexis.jpg" tone="bw" caption="Alexis" fig="Fig. 02" height={isMobile ? 260 : 360} />
+          <PhotoCard src="/assets/photos/evan.jpg" tone="bw" caption="Evan" fig="Fig. 01" height={isMobile ? 260 : 360} />
+          <PhotoCard src="/assets/photos/alexis.jpg" tone="bw" caption="Alexis" fig="Fig. 02" height={isMobile ? 260 : 360} />
         </div>
       </section>
 
       <section style={{ background: 'var(--surface-dark)', color: 'var(--lc-paper-text)', position: 'relative', padding: isMobile ? '64px 22px' : '88px 48px' }}>
         <div className="lc-grain"></div>
         <div style={{ position: 'relative', maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          <img src="../../assets/logos/mono-paper.png" alt="Laux Creatives" style={{ height: isMobile ? '56px' : '78px', width: 'auto', opacity: 0.95 }} />
+          <img src="/assets/logos/mono-paper.png" alt="Laux Creatives" style={{ height: isMobile ? '56px' : '78px', width: 'auto', opacity: 0.95 }} />
           <div style={{ fontFamily: 'var(--font-editorial)', fontStyle: 'italic', fontSize: isMobile ? '22px' : '30px', lineHeight: 1.3, marginTop: '26px' }}>
             "Drawn to the moments, details, and ideas that make your story worth telling."
           </div>

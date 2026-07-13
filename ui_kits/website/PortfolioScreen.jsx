@@ -44,7 +44,7 @@ function PortfolioScreen() {
             const tall = filter === 'Portraits' ? i % 2 === 0 : i % 3 === 0;
             return (
               <div key={p.src} style={{ breakInside: 'avoid', marginBottom: '18px' }}>
-                <PhotoCard src={`../../assets/photos/${p.src}`} caption={p.cat} fig={`Fig. 0${(i % 9) + 1}`} height={tall ? 360 : 260} />
+                <PhotoCard src={`/assets/photos/${p.src}`} caption={p.cat} fig={`Fig. 0${(i % 9) + 1}`} height={tall ? 360 : 260} />
               </div>
             );
           })}

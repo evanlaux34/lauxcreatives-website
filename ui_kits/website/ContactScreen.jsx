@@ -116,7 +116,7 @@ function ContactScreen() {
           <div style={{ marginTop: '34px', fontFamily: 'var(--font-label)', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--lc-ink-muted)', lineHeight: 2.2 }}>
             Chicago &amp; Beyond
           </div>
-          <img src="../../assets/logos/badge-gold.png" alt="Laux Creatives — Chicago & Beyond" style={{ height: '96px', width: 'auto', marginTop: '30px', opacity: 0.95 }} />
+          <img src="/assets/logos/badge-gold.png" alt="Laux Creatives — Chicago & Beyond" style={{ height: '96px', width: 'auto', marginTop: '30px', opacity: 0.95 }} />
         </div>
 
         <div style={{ background: 'var(--surface-card)', border: '1px solid var(--lc-line-soft)', boxShadow: 'var(--shadow-card)', padding: isMobile ? '26px 22px' : '40px' }}>

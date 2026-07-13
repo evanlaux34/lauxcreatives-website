@@ -15,7 +15,7 @@ function HomeScreen({ onNav }) {
       {/* Hero */}
       <section style={{
         position: 'relative', height: isMobile ? 'clamp(380px, 52vh, 440px)' : 648, overflow: 'hidden',
-        backgroundImage: 'linear-gradient(180deg,rgba(40,35,24,0.5) 0%,rgba(40,35,24,0.18) 42%,rgba(40,35,24,0.68) 100%),url(../../assets/photos/IMG_9828-hero.jpg)',
+        backgroundImage: 'linear-gradient(180deg,rgba(40,35,24,0.5) 0%,rgba(40,35,24,0.18) 42%,rgba(40,35,24,0.68) 100%),url(/assets/photos/IMG_9828-hero.jpg)',
         backgroundSize: 'cover', backgroundPosition: 'center 42%', color: 'var(--lc-paper-text)',
       }}>
         <div className="lc-grain"></div>
@@ -28,8 +28,8 @@ function HomeScreen({ onNav }) {
           <span>Chicago &amp; Beyond</span><span>Est. 2024</span>
         </div>
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: isMobile ? 'flex-end' : 'center', textAlign: 'center', padding: isMobile ? '0 24px 74px' : '0 40px' }}>
-          <img src="../../assets/logos/mark-circle-paper.png" alt="Laux Creatives" style={{ height: isMobile ? '46px' : '84px', width: 'auto', marginBottom: isMobile ? '10px' : '20px', filter: 'drop-shadow(0 2px 14px rgba(30,26,16,0.45))', transform: isMobile ? 'translateY(-83px)' : 'translate(0px, -130px)', boxShadow: '0px 4px 12px 0px rgba(0, 0, 0, 0.15)' }} />
-          <img src="../../assets/logos/wordmark-paper.png" alt="Laux Creatives" style={{ width: isMobile ? 'min(58vw, 230px)' : '450px', height: 'auto', display: 'block', filter: 'drop-shadow(0 2px 20px rgba(30,26,16,0.42))', transform: isMobile ? 'none' : 'translate(0px, 29px)' }} />
+          <img src="/assets/logos/mark-circle-paper.png" alt="Laux Creatives" style={{ height: isMobile ? '46px' : '84px', width: 'auto', marginBottom: isMobile ? '10px' : '20px', filter: 'drop-shadow(0 2px 14px rgba(30,26,16,0.45))', transform: isMobile ? 'translateY(-83px)' : 'translate(0px, -130px)', boxShadow: '0px 4px 12px 0px rgba(0, 0, 0, 0.15)' }} />
+          <img src="/assets/logos/wordmark-paper.png" alt="Laux Creatives" style={{ width: isMobile ? 'min(58vw, 230px)' : '450px', height: 'auto', display: 'block', filter: 'drop-shadow(0 2px 20px rgba(30,26,16,0.42))', transform: isMobile ? 'none' : 'translate(0px, 29px)' }} />
           <div style={{ marginTop: isMobile ? '14px' : '20px', fontFamily: 'var(--font-editorial)', fontStyle: 'italic', fontSize: isMobile ? '14px' : '23px', color: 'rgba(242,234,212,0.95)', textShadow: '0 1px 10px rgba(30,26,16,0.5)', transform: isMobile ? 'none' : 'translate(0px, 20px)' }}>
             Serving people well through photography &amp; design
           </div>
@@ -63,15 +63,15 @@ function HomeScreen({ onNav }) {
           <div style={{ display: 'grid', gridTemplateColumns: featCols, gap: '18px' }}>
             {heroCard ? (
               <div style={{ gridRow: 'span 2', display: 'flex' }}>
-                <PhotoCard src="../../assets/photos/weddings/IMG_9828.jpg" caption="Weddings" fig="Fig. 01" height={520} fill style={{ flex: '1 1 auto' }} />
+                <PhotoCard src="/assets/photos/weddings/IMG_9828.jpg" caption="Weddings" fig="Fig. 01" height={520} fill style={{ flex: '1 1 auto' }} />
               </div>
             ) : (
-              <PhotoCard src="../../assets/photos/weddings/IMG_9828.jpg" caption="Weddings" fig="Fig. 01" height={isMobile ? 320 : 300} />
+              <PhotoCard src="/assets/photos/weddings/IMG_9828.jpg" caption="Weddings" fig="Fig. 01" height={isMobile ? 320 : 300} />
             )}
-            <PhotoCard src="../../assets/photos/engagements/IMG_0374.jpg" caption="Engagements" height={smallH} />
-            <PhotoCard src="../../assets/photos/portraits/DSCF3673.jpg" caption="Portraits" height={smallH} />
-            <PhotoCard src="../../assets/photos/engagements/IMG_6684.jpg" caption="Engagements" height={smallH} />
-            <PhotoCard src="../../assets/photos/family/IMG_9244.jpg" caption="Family" height={smallH} />
+            <PhotoCard src="/assets/photos/engagements/IMG_0374.jpg" caption="Engagements" height={smallH} />
+            <PhotoCard src="/assets/photos/portraits/DSCF3673.jpg" caption="Portraits" height={smallH} />
+            <PhotoCard src="/assets/photos/engagements/IMG_6684.jpg" caption="Engagements" height={smallH} />
+            <PhotoCard src="/assets/photos/family/IMG_9244.jpg" caption="Family" height={smallH} />
           </div>
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
             <Button variant="secondary" onClick={() => onNav('Portfolio')}>See the full gallery</Button>
@@ -83,8 +83,8 @@ function HomeScreen({ onNav }) {
       <section style={{ background: 'var(--surface-page)', padding: pad }}>
         <div style={{ maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '0.85fr 1fr', gap: isMobile ? '32px' : '56px', alignItems: 'center' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', alignItems: 'start' }}>
-            <PhotoCard src="../../assets/photos/evan.jpg" tone="bw" caption="Evan" fig="Fig. 01" height={isMobile ? 240 : 300} />
-            <PhotoCard src="../../assets/photos/alexis.jpg" tone="bw" caption="Alexis" fig="Fig. 02" height={isMobile ? 240 : 300} />
+            <PhotoCard src="/assets/photos/evan.jpg" tone="bw" caption="Evan" fig="Fig. 01" height={isMobile ? 240 : 300} />
+            <PhotoCard src="/assets/photos/alexis.jpg" tone="bw" caption="Alexis" fig="Fig. 02" height={isMobile ? 240 : 300} />
           </div>
           <div>
             <Eyebrow tone="accent" style={{ marginBottom: '20px' }}>Our Story</Eyebrow>
