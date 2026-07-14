@@ -7,3 +7,6 @@ compatibility_date = "2026-06-30"
 # a Worker with only an [assets] directory serves the files directly.
 [assets]
 directory = "."
+# Serve clean, no-trailing-slash URLs (/portfolio, not /portfolio/) to match the
+# canonical tags and sitemap; the trailing-slash form 301s to the clean one.
+html_handling = "drop-trailing-slash"
