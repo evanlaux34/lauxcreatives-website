@@ -1,9 +1,25 @@
 /* global React */
 const { Eyebrow, Button, PhotoCard, SectionHeader, Caption, Logo } = window.LauxCreativesDesignSystem_2042c0;
 
+// Hero slideshow images (cross-fade + loop). First one is the initial/prerendered frame.
+const HERO_SLIDES = [
+  '/assets/photos/hero-web/IMG_9828-hero.jpg',
+  '/assets/photos/hero-web/IMG_0861.jpg',
+  '/assets/photos/hero-web/IMG_0092.jpg',
+  '/assets/photos/hero-web/IMG_3051.jpg',
+  '/assets/photos/hero-web/IMG_6926-3.jpg',
+];
+
 function HomeScreen({ onNav }) {
   const { isMobile, isTablet } = window.useViewport();
   const pad = isMobile ? '56px 22px' : isTablet ? '72px 40px' : '84px 48px';
+
+  // Cross-fading hero slideshow — advance every 5.5s, looping.
+  const [heroIdx, setHeroIdx] = React.useState(0);
+  React.useEffect(() => {
+    const id = setInterval(() => setHeroIdx(i => (i + 1) % HERO_SLIDES.length), 5500);
+    return () => clearInterval(id);
+  }, []);
 
   // Featured grid: 3-up on desktop (first card tall), 2-up on tablet, stacked on mobile.
   const featCols = isMobile ? '1fr' : isTablet ? '1fr 1fr' : '1.3fr 1fr 1fr';
@@ -15,9 +31,20 @@ function HomeScreen({ onNav }) {
       {/* Hero */}
       <section style={{
         position: 'relative', height: isMobile ? 'clamp(380px, 52vh, 440px)' : 648, overflow: 'hidden',
-        backgroundImage: 'linear-gradient(180deg,rgba(40,35,24,0.5) 0%,rgba(40,35,24,0.18) 42%,rgba(40,35,24,0.68) 100%),url(/assets/photos/IMG_9828-hero.jpg)',
-        backgroundSize: 'cover', backgroundPosition: 'center 42%', color: 'var(--lc-paper-text)',
+        background: 'var(--lc-ink)', color: 'var(--lc-paper-text)',
       }}>
+        {/* Cross-fading slideshow layers */}
+        {HERO_SLIDES.map((src, i) => (
+          <div key={src} aria-hidden="true" style={{
+            position: 'absolute', inset: 0,
+            backgroundImage: `url(${src})`,
+            backgroundSize: 'cover', backgroundPosition: 'center 42%',
+            opacity: i === heroIdx ? 1 : 0,
+            transition: 'opacity 1.6s ease-in-out', willChange: 'opacity',
+          }}></div>
+        ))}
+        {/* Gradient wash over the photos */}
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', backgroundImage: 'linear-gradient(180deg,rgba(40,35,24,0.5) 0%,rgba(40,35,24,0.18) 42%,rgba(40,35,24,0.68) 100%)' }}></div>
         <div className="lc-grain"></div>
         <div style={{ position: 'absolute', inset: isMobile ? '12px' : '22px', border: '1px solid var(--lc-line-on-photo)', pointerEvents: 'none' }}></div>
         <div style={{
