@@ -30,7 +30,7 @@ function HomeScreen({ onNav }) {
     <div>
       {/* Hero */}
       <section style={{
-        position: 'relative', height: isMobile ? 'clamp(380px, 52vh, 440px)' : 648, overflow: 'hidden',
+        position: 'relative', height: isMobile ? 'clamp(380px, 52vh, 440px)' : 'clamp(620px, 86vh, 900px)', overflow: 'hidden',
         background: 'var(--lc-ink)', color: 'var(--lc-paper-text)',
       }}>
         {/* Cross-fading slideshow layers */}
@@ -55,7 +55,7 @@ function HomeScreen({ onNav }) {
           <span>Chicago &amp; Beyond</span><span>Est. 2024</span>
         </div>
         <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: isMobile ? 'flex-end' : 'center', textAlign: 'center', padding: isMobile ? '0 24px 74px' : '0 40px' }}>
-          <img src="/assets/logos/mark-circle-paper.png" alt="Laux Creatives" style={{ height: isMobile ? '46px' : '84px', width: 'auto', marginBottom: isMobile ? '10px' : '20px', filter: 'drop-shadow(0 2px 14px rgba(30,26,16,0.45))', transform: isMobile ? 'translateY(-83px)' : 'translate(0px, -130px)', boxShadow: '0px 4px 12px 0px rgba(0, 0, 0, 0.15)' }} />
+          <img src="/assets/logos/mark-circle-paper.png" alt="Laux Creatives" style={{ height: isMobile ? '46px' : '84px', width: 'auto', marginBottom: isMobile ? '10px' : '20px', filter: 'drop-shadow(0 2px 14px rgba(30,26,16,0.45))', transform: isMobile ? 'translateY(-83px)' : 'translate(0px, -130px)' }} />
           <img src="/assets/logos/wordmark-paper.png" alt="Laux Creatives" style={{ width: isMobile ? 'min(58vw, 230px)' : '450px', height: 'auto', display: 'block', filter: 'drop-shadow(0 2px 20px rgba(30,26,16,0.42))', transform: isMobile ? 'none' : 'translate(0px, 29px)' }} />
           <div style={{ marginTop: isMobile ? '14px' : '20px', fontFamily: 'var(--font-editorial)', fontStyle: 'italic', fontSize: isMobile ? '14px' : '23px', color: 'rgba(242,234,212,0.95)', textShadow: '0 1px 10px rgba(30,26,16,0.5)', transform: isMobile ? 'none' : 'translate(0px, 20px)' }}>
             Serving people well through photography &amp; design
