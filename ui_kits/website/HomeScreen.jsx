@@ -4,6 +4,7 @@ const { Eyebrow, Button, PhotoCard, SectionHeader, Caption, Logo } = window.Laux
 // Hero slideshow images (cross-fade + loop). First one is the initial/prerendered frame.
 const HERO_SLIDES = [
   '/assets/photos/hero-web/IMG_9828-hero.jpg',
+  '/assets/photos/hero-web/IMG_5504-2.jpg',
   '/assets/photos/hero-web/IMG_0861.jpg',
   '/assets/photos/hero-web/IMG_0092.jpg',
   '/assets/photos/hero-web/IMG_3051.jpg',
