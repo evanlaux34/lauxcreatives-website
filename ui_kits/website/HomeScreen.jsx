@@ -18,7 +18,7 @@ function HomeScreen({ onNav }) {
   // Cross-fading hero slideshow — advance every 5.5s, looping.
   const [heroIdx, setHeroIdx] = React.useState(0);
   React.useEffect(() => {
-    const id = setInterval(() => setHeroIdx(i => (i + 1) % HERO_SLIDES.length), 5500);
+    const id = setInterval(() => setHeroIdx(i => (i + 1) % HERO_SLIDES.length), 4600);
     return () => clearInterval(id);
   }, []);
 
