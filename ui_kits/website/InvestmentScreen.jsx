@@ -5,7 +5,7 @@ const PACKAGES = [
   {
     name: 'The First Package',
     coverage: '4–5 hours',
-    price: '$1,750',
+    price: '$2,250',
     featured: false,
     includes: [
       'Engagement session included',
@@ -17,7 +17,7 @@ const PACKAGES = [
   {
     name: 'The Second Package',
     coverage: '6–8 hours',
-    price: '$2,000',
+    price: '$3,000',
     featured: false,
     includes: [
       'Engagement session included',
@@ -29,7 +29,7 @@ const PACKAGES = [
   {
     name: 'The Third Package',
     coverage: '8 hours',
-    price: '$2,500',
+    price: '$3,500',
     featured: true,
     includes: [
       'Engagement session included',
@@ -41,7 +41,7 @@ const PACKAGES = [
   {
     name: 'The Fourth Package',
     coverage: '8 hours',
-    price: '$4,200',
+    price: '$4,750',
     featured: false,
     includes: [
       'Engagement session included',
