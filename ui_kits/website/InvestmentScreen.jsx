@@ -41,7 +41,7 @@ const PACKAGES = [
   {
     name: 'The Fourth Package',
     coverage: '8 hours',
-    price: '$5,500',
+    price: '$5,750',
     featured: false,
     includes: [
       'Engagement session included',
